@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Periodic Table</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Periodic Table</h1>
+    <input type="text" id="search-bar" placeholder="Search for an element...">
+  </header>
+
+  <!-- <div id="filters">
+    <h2>Filters</h2>
+  
+    <label for="state-filter">State of Matter:</label>
+    <select id="state-filter">
+      <option value="all">All</option>
+      <option value="solid">Solid</option>
+      <option value="liquid">Liquid</option>
+      <option value="gas">Gas</option>
+      <option value="unknown">Unknown</option>
+    </select>
+  
+    <label for="category-filter">Element Category:</label>
+    <select id="category-filter">
+      <option value="all">All</option>
+      <option value="metal">Metal</option>
+      <option value="nonmetal">Nonmetal</option>
+      <option value="metalloid">Metalloid</option>
+    </select>
+  
+    <label for="group-filter">Group:</label>
+    <select id="group-filter">
+      <option value="all">All</option>
+      <option value="1">Group 1: Alkali Metals</option>
+      <option value="2">Group 2: Alkaline Earth Metals</option>
+      <option value="3-12">Groups 3-12: Transition Metals</option>
+      <option value="13">Group 13: Boron Group</option>
+      <option value="14">Group 14: Carbon Group</option>
+      <option value="15">Group 15: Nitrogen Group</option>
+      <option value="16">Group 16: Chalcogens</option>
+      <option value="17">Group 17: Halogens</option>
+      <option value="18">Group 18: Noble Gases</option>
+    </select>
+  
+    <label for="period-filter">Period:</label>
+    <select id="period-filter">
+      <option value="all">All</option>
+      <option value="1">Period 1</option>
+      <option value="2">Period 2</option>
+      <option value="3">Period 3</option>
+      <option value="4">Period 4</option>
+      <option value="5">Period 5</option>
+      <option value="6">Period 6</option>
+      <option value="7">Period 7</option>
+    </select>
+  </div>   -->
+
+  <main class="periodic-table">
+    <!-- Hydrogen -->
+    <div class="element" data-symbol="H" data-name="Hydrogen" data-number="1" data-category="Nonmetal">
+        <span class="number">1</span>
+        <span class="symbol">H</span>
+        <span class="name">Hydrogen</span>
+    </div>
+    <!-- Helium -->
+    <div class="element" data-symbol="He" data-name="Helium" data-number="2" data-category="Noble Gas">
+        <span class="number">2</span>
+        <span class="symbol">He</span>
+        <span class="name">Helium</span>
+    </div>
+    <!-- Lithium -->
+    <div class="element" data-symbol="Li" data-name="Lithium" data-number="3" data-category="Alkali Metal">
+        <span class="number">3</span>
+        <span class="symbol">Li</span>
+        <span class="name">Lithium</span>
+    </div>
+    <!-- Beryllium -->
+    <div class="element" data-symbol="Be" data-name="Beryllium" data-number="4" data-category="Alkaline Earth Metal">
+        <span class="number">4</span>
+        <span class="symbol">Be</span>
+        <span class="name">Beryllium</span>
+    </div>
+    <!-- Boron -->
+    <div class="element" data-symbol="B" data-name="Boron" data-number="5" data-category="Metalloid">
+        <span class="number">5</span>
+        <span class="symbol">B</span>
+        <span class="name">Boron</span>
+    </div>
+    <!-- Carbon -->
+    <div class="element" data-symbol="C" data-name="Carbon" data-number="6" data-category="Nonmetal">
+        <span class="number">6</span>
+        <span class="symbol">C</span>
+        <span class="name">Carbon</span>
+    </div>
+    <!-- Nitrogen -->
+    <div class="element" data-symbol="N" data-name="Nitrogen" data-number="7" data-category="Nonmetal">
+        <span class="number">7</span>
+        <span class="symbol">N</span>
+        <span class="name">Nitrogen</span>
+    </div>
+    <!-- Oxygen -->
+    <div class="element" data-symbol="O" data-name="Oxygen" data-number="8" data-category="Nonmetal">
+        <span class="number">8</span>
+        <span class="symbol">O</span>
+        <span class="name">Oxygen</span>
+    </div>
+    <!-- Fluorine -->
+    <div class="element" data-symbol="F" data-name="Fluorine" data-number="9" data-category="Halogen">
+        <span class="number">9</span>
+        <span class="symbol">F</span>
+        <span class="name">Fluorine</span>
+    </div>
+    <!-- Neon -->
+    <div class="element" data-symbol="Ne" data-name="Neon" data-number="10" data-category="Noble Gas">
+        <span class="number">10</span>
+        <span class="symbol">Ne</span>
+        <span class="name">Neon</span>
+    </div>
+    <!-- Sodium -->
+    <div class="element" data-symbol="Na" data-name="Sodium" data-number="11" data-category="Alkali Metal">
+        <span class="number">11</span>
+        <span class="symbol">Na</span>
+        <span class="name">Sodium</span>
+    </div>
+    <!-- Magnesium -->
+    <div class="element" data-symbol="Mg" data-name="Magnesium" data-number="12" data-category="Alkaline Earth Metal">
+        <span class="number">12</span>
+        <span class="symbol">Mg</span>
+        <span class="name">Magnesium</span>
+    </div>
+    <!-- Aluminum -->
+    <div class="element" data-symbol="Al" data-name="Aluminum" data-number="13" data-category="Post-transition Metal">
+        <span class="number">13</span>
+        <span class="symbol">Al</span>
+        <span class="name">Aluminum</span>
+    </div>
+    <!-- Silicon -->
+    <div class="element" data-symbol="Si" data-name="Silicon" data-number="14" data-category="Metalloid">
+        <span class="number">14</span>
+        <span class="symbol">Si</span>
+        <span class="name">Silicon</span>
+    </div>
+    <!-- Phosphorus -->
+    <div class="element" data-symbol="P" data-name="Phosphorus" data-number="15" data-category="Nonmetal">
+        <span class="number">15</span>
+        <span class="symbol">P</span>
+        <span class="name">Phosphorus</span>
+    </div>
+    <!-- Sulfur -->
+    <div class="element" data-symbol="S" data-name="Sulfur" data-number="16" data-category="Nonmetal">
+        <span class="number">16</span>
+        <span class="symbol">S</span>
+        <span class="name">Sulfur</span>
+    </div>
+    <!-- Chlorine -->
+    <div class="element" data-symbol="Cl" data-name="Chlorine" data-number="17" data-category="Halogen">
+        <span class="number">17</span>
+        <span class="symbol">Cl</span>
+        <span class="name">Chlorine</span>
+    </div>
+    <!-- Argon -->
+    <div class="element" data-symbol="Ar" data-name="Argon" data-number="18" data-category="Noble Gas">
+        <span class="number">18</span>
+        <span class="symbol">Ar</span>
+        <span class="name">Argon</span>
+    </div>
+    <!-- Potassium -->
+    <div class="element" data-symbol="K" data-name="Potassium" data-number="19" data-category="Alkali Metal">
+        <span class="number">19</span>
+        <span class="symbol">K</span>
+        <span class="name">Potassium</span>
+    </div>
+    <!-- Calcium -->
+    <div class="element" data-symbol="Ca" data-name="Calcium" data-number="20" data-category="Alkaline Earth Metal">
+        <span class="number">20</span>
+        <span class="symbol">Ca</span>
+        <span class="name">Calcium</span>
+    </div>
+    <!-- Scandium to Oganesson -->
+    <div class="element" data-symbol="Sc" data-name="Scandium" data-number="21" data-category="Transition Metal">
+        <span class="number">21</span>
+        <span class="symbol">Sc</span>
+        <span class="name">Scandium</span>
+    </div>
+    <div class="element" data-symbol="Ti" data-name="Titanium" data-number="22" data-category="Transition Metal">
+        <span class="number">22</span>
+        <span class="symbol">Ti</span>
+        <span class="name">Titanium</span>
+    </div>
+    <div class="element" data-symbol="V" data-name="Vanadium" data-number="23" data-category="Transition Metal">
+        <span class="number">23</span>
+        <span class="symbol">V</span>
+        <span class="name">Vanadium</span>
+    </div>
+    <div class="element" data-symbol="Cr" data-name="Chromium" data-number="24" data-category="Transition Metal">
+        <span class="number">24</span>
+        <span class="symbol">Cr</span>
+        <span class="name">Chromium</span>
+    </div>
+    <div class="element" data-symbol="Mn" data-name="Manganese" data-number="25" data-category="Transition Metal">
+        <span class="number">25</span>
+        <span class="symbol">Mn</span>
+        <span class="name">Manganese</span>
+    </div>
+    <div class="element" data-symbol="Fe" data-name="Iron" data-number="26" data-category="Transition Metal">
+        <span class="number">26</span>
+        <span class="symbol">Fe</span>
+        <span class="name">Iron</span>
+    </div>
+    <div class="element" data-symbol="Co" data-name="Cobalt" data-number="27" data-category="Transition Metal">
+        <span class="number">27</span>
+        <span class="symbol">Co</span>
+        <span class="name">Cobalt</span>
+    </div>
+    <div class="element" data-symbol="Ni" data-name="Nickel" data-number="28" data-category="Transition Metal">
+        <span class="number">28</span>
+        <span class="symbol">Ni</span>
+        <span class="name">Nickel</span>
+    </div>
+    <div class="element" data-symbol="Cu" data-name="Copper" data-number="29" data-category="Transition Metal">
+        <span class="number">29</span>
+        <span class="symbol">Cu</span>
+        <span class="name">Copper</span>
+    </div>
+    <div class="element" data-symbol="Zn" data-name="Zinc" data-number="30" data-category="Transition Metal">
+        <span class="number">30</span>
+        <span class="symbol">Zn</span>
+        <span class="name">Zinc</span>
+    </div>
+    <div class="element" data-symbol="Ga" data-name="Gallium" data-number="31" data-category="Post-transition Metal">
+        <span class="number">31</span>
+        <span class="symbol">Ga</span>
+        <span class="name">Gallium</span>
+    </div>
+    <div class="element" data-symbol="Ge" data-name="Germanium" data-number="32" data-category="Metalloid">
+        <span class="number">32</span>
+        <span class="symbol">Ge</span>
+        <span class="name">Germanium</span>
+    </div>
+    <div class="element" data-symbol="As" data-name="Arsenic" data-number="33" data-category="Metalloid">
+        <span class="number">33</span>
+        <span class="symbol">As</span>
+        <span class="name">Arsenic</span>
+    </div>
+    <div class="element" data-symbol="Se" data-name="Selenium" data-number="34" data-category="Nonmetal">
+        <span class="number">34</span>
+        <span class="symbol">Se</span>
+        <span class="name">Selenium</span>
+    </div>
+    <div class="element" data-symbol="Br" data-name="Bromine" data-number="35" data-category="Halogen">
+        <span class="number">35</span>
+        <span class="symbol">Br</span>
+        <span class="name">Bromine</span>
+    </div>
+    <div class="element" data-symbol="Kr" data-name="Krypton" data-number="36" data-category="Noble Gas">
+        <span class="number">36</span>
+        <span class="symbol">Kr</span>
+        <span class="name">Krypton</span>
+    </div>
+    <div class="element" data-symbol="Rb" data-name="Rubidium" data-number="37" data-category="Alkali Metal">
+        <span class="number">37</span>
+        <span class="symbol">Rb</span>
+        <span class="name">Rubidium</span>
+    </div>
+    <div class="element" data-symbol="Sr" data-name="Strontium" data-number="38" data-category="Alkaline Earth Metal">
+        <span class="number">38</span>
+        <span class="symbol">Sr</span>
+        <span class="name">Strontium</span>
+    </div>
+    <div class="element" data-symbol="Y" data-name="Yttrium" data-number="39" data-category="Transition Metal">
+        <span class="number">39</span>
+        <span class="symbol">Y</span>
+        <span class="name">Yttrium</span>
+    </div>
+    <div class="element" data-symbol="Zr" data-name="Zirconium" data-number="40" data-category="Transition Metal">
+    <span class="number">40</span>
+    <span class="symbol">Zr</span>
+    <span class="name">Zirconium</span>
+    </div>
+    <div class="element" data-symbol="Nb" data-name="Niobium" data-number="41" data-category="Transition Metal">
+    <span class="number">41</span>
+    <span class="symbol">Nb</span>
+    <span class="name">Niobium</span>
+    </div>
+    <div class="element" data-symbol="Mo" data-name="Molybdenum" data-number="42" data-category="Transition Metal">
+    <span class="number">42</span>
+    <span class="symbol">Mo</span>
+    <span class="name">Molybdenum</span>
+    </div>
+    <div class="element" data-symbol="Tc" data-name="Technetium" data-number="43" data-category="Transition Metal">
+    <span class="number">43</span>
+    <span class="symbol">Tc</span>
+    <span class="name">Technetium</span>
+    </div>
+    <div class="element" data-symbol="Ru" data-name="Ruthenium" data-number="44" data-category="Transition Metal">
+    <span class="number">44</span>
+    <span class="symbol">Ru</span>
+    <span class="name">Ruthenium</span>
+    </div>
+    <div class="element" data-symbol="Rh" data-name="Rhodium" data-number="45" data-category="Transition Metal">
+    <span class="number">45</span>
+    <span class="symbol">Rh</span>
+    <span class="name">Rhodium</span>
+    </div>
+    <div class="element" data-symbol="Pd" data-name="Palladium" data-number="46" data-category="Transition Metal">
+    <span class="number">46</span>
+    <span class="symbol">Pd</span>
+    <span class="name">Palladium</span>
+    </div>
+    <div class="element" data-symbol="Ag" data-name="Silver" data-number="47" data-category="Transition Metal">
+    <span class="number">47</span>
+    <span class="symbol">Ag</span>
+    <span class="name">Silver</span>
+    </div>
+    <div class="element" data-symbol="Cd" data-name="Cadmium" data-number="48" data-category="Transition Metal">
+    <span class="number">48</span>
+    <span class="symbol">Cd</span>
+    <span class="name">Cadmium</span>
+    </div>
+    <div class="element" data-symbol="In" data-name="Indium" data-number="49" data-category="Post-transition Metal">
+    <span class="number">49</span>
+    <span class="symbol">In</span>
+    <span class="name">Indium</span>
+    </div>
+    <div class="element" data-symbol="Sn" data-name="Tin" data-number="50" data-category="Post-transition Metal">
+    <span class="number">50</span>
+    <span class="symbol">Sn</span>
+    <span class="name">Tin</span>
+    </div>
+    <div class="element" data-symbol="Sb" data-name="Antimony" data-number="51" data-category="Metalloid">
+    <span class="number">51</span>
+    <span class="symbol">Sb</span>
+    <span class="name">Antimony</span>
+    </div>
+    <div class="element" data-symbol="Te" data-name="Tellurium" data-number="52" data-category="Metalloid">
+    <span class="number">52</span>
+    <span class="symbol">Te</span>
+    <span class="name">Tellurium</span>
+    </div>
+    <div class="element" data-symbol="I" data-name="Iodine" data-number="53" data-category="Halogen">
+    <span class="number">53</span>
+    <span class="symbol">I</span>
+    <span class="name">Iodine</span>
+    </div>
+    <div class="element" data-symbol="Xe" data-name="Xenon" data-number="54" data-category="Noble Gas">
+    <span class="number">54</span>
+    <span class="symbol">Xe</span>
+    <span class="name">Xenon</span>
+    </div>
+    <div class="element" data-symbol="Cs" data-name="Cesium" data-number="55" data-category="Alkali Metal">
+    <span class="number">55</span>
+    <span class="symbol">Cs</span>
+    <span class="name">Cesium</span>
+    </div>
+    <div class="element" data-symbol="Ba" data-name="Barium" data-number="56" data-category="Alkaline Earth Metal">
+    <span class="number">56</span>
+    <span class="symbol">Ba</span>
+    <span class="name">Barium</span>
+    </div>
+    <!-- Lanthanides -->
+    <div class="element" data-symbol="La" data-name="Lanthanum" data-number="57" data-category="Lanthanide">
+    <span class="number">57</span>
+    <span class="symbol">La</span>
+    <span class="name">Lanthanum</span>
+    </div>
+    <div class="element" data-symbol="Ce" data-name="Cerium" data-number="58" data-category="Lanthanide">
+    <span class="number">58</span>
+    <span class="symbol">Ce</span>
+    <span class="name">Cerium</span>
+    </div>
+    <div class="element" data-symbol="Pr" data-name="Praseodymium" data-number="59" data-category="Lanthanide">
+    <span class="number">59</span>
+    <span class="symbol">Pr</span>
+    <span class="name">Praseodymium</span>
+    </div>
+    <div class="element" data-symbol="Nd" data-name="Neodymium" data-number="60" data-category="Lanthanide">
+    <span class="number">60</span>
+    <span class="symbol">Nd</span>
+    <span class="name">Neodymium</span>
+    </div>
+    <div class="element" data-symbol="Pm" data-name="Promethium" data-number="61" data-category="Lanthanide">
+    <span class="number">61</span>
+    <span class="symbol">Pm</span>
+    <span class="name">Promethium</span>
+    </div>
+    <!-- Samarium -->
+    <div class="element" data-symbol="Sm" data-name="Samarium" data-number="62" data-category="Lanthanide">
+    <span class="number">62</span>
+    <span class="symbol">Sm</span>
+    <span class="name">Samarium</span>
+    </div>
+    <!-- Europium -->
+    <div class="element" data-symbol="Eu" data-name="Europium" data-number="63" data-category="Lanthanide">
+    <span class="number">63</span>
+    <span class="symbol">Eu</span>
+    <span class="name">Europium</span>
+    </div>
+    <!-- Gadolinium -->
+    <div class="element" data-symbol="Gd" data-name="Gadolinium" data-number="64" data-category="Lanthanide">
+    <span class="number">64</span>
+    <span class="symbol">Gd</span>
+    <span class="name">Gadolinium</span>
+    </div>
+    <!-- Terbium -->
+    <div class="element" data-symbol="Tb" data-name="Terbium" data-number="65" data-category="Lanthanide">
+    <span class="number">65</span>
+    <span class="symbol">Tb</span>
+    <span class="name">Terbium</span>
+    </div>
+    <!-- Dysprosium -->
+    <div class="element" data-symbol="Dy" data-name="Dysprosium" data-number="66" data-category="Lanthanide">
+    <span class="number">66</span>
+    <span class="symbol">Dy</span>
+    <span class="name">Dysprosium</span>
+    </div>
+    <!-- Holmium -->
+    <div class="element" data-symbol="Ho" data-name="Holmium" data-number="67" data-category="Lanthanide">
+    <span class="number">67</span>
+    <span class="symbol">Ho</span>
+    <span class="name">Holmium</span>
+    </div>
+    <!-- Erbium -->
+    <div class="element" data-symbol="Er" data-name="Erbium" data-number="68" data-category="Lanthanide">
+    <span class="number">68</span>
+    <span class="symbol">Er</span>
+    <span class="name">Erbium</span>
+    </div>
+    <!-- Thulium -->
+    <div class="element" data-symbol="Tm" data-name="Thulium" data-number="69" data-category="Lanthanide">
+    <span class="number">69</span>
+    <span class="symbol">Tm</span>
+    <span class="name">Thulium</span>
+    </div>
+    <!-- Ytterbium -->
+    <div class="element" data-symbol="Yb" data-name="Ytterbium" data-number="70" data-category="Lanthanide">
+    <span class="number">70</span>
+    <span class="symbol">Yb</span>
+    <span class="name">Ytterbium</span>
+    </div>
+    <!-- Lutetium -->
+    <div class="element" data-symbol="Lu" data-name="Lutetium" data-number="71" data-category="Lanthanide">
+    <span class="number">71</span>
+    <span class="symbol">Lu</span>
+    <span class="name">Lutetium</span>
+    </div>
+    <!-- Hafnium -->
+    <div class="element" data-symbol="Hf" data-name="Hafnium" data-number="72" data-category="Transition Metal">
+    <span class="number">72</span>
+    <span class="symbol">Hf</span>
+    <span class="name">Hafnium</span>
+    </div>
+    <!-- Tantalum -->
+    <div class="element" data-symbol="Ta" data-name="Tantalum" data-number="73" data-category="Transition Metal">
+    <span class="number">73</span>
+    <span class="symbol">Ta</span>
+    <span class="name">Tantalum</span>
+    </div>
+    <!-- Tungsten -->
+    <div class="element" data-symbol="W" data-name="Tungsten" data-number="74" data-category="Transition Metal">
+    <span class="number">74</span>
+    <span class="symbol">W</span>
+    <span class="name">Tungsten</span>
+    </div>
+    <!-- Rhenium -->
+    <div class="element" data-symbol="Re" data-name="Rhenium" data-number="75" data-category="Transition Metal">
+    <span class="number">75</span>
+    <span class="symbol">Re</span>
+    <span class="name">Rhenium</span>
+    </div>
+    <!-- Osmium -->
+    <div class="element" data-symbol="Os" data-name="Osmium" data-number="76" data-category="Transition Metal">
+    <span class="number">76</span>
+    <span class="symbol">Os</span>
+    <span class="name">Osmium</span>
+    </div>
+    <!-- Iridium -->
+    <div class="element" data-symbol="Ir" data-name="Iridium" data-number="77" data-category="Transition Metal">
+    <span class="number">77</span>
+    <span class="symbol">Ir</span>
+    <span class="name">Iridium</span>
+    </div>
+    <!-- Platinum -->
+    <div class="element" data-symbol="Pt" data-name="Platinum" data-number="78" data-category="Transition Metal">
+    <span class="number">78</span>
+    <span class="symbol">Pt</span>
+    <span class="name">Platinum</span>
+    </div>
+    <!-- Gold -->
+    <div class="element" data-symbol="Au" data-name="Gold" data-number="79" data-category="Transition Metal">
+    <span class="number">79</span>
+    <span class="symbol">Au</span>
+    <span class="name">Gold</span>
+    </div>
+    <!-- Mercury -->
+    <div class="element" data-symbol="Hg" data-name="Mercury" data-number="80" data-category="Transition Metal">
+    <span class="number">80</span>
+    <span class="symbol">Hg</span>
+    <span class="name">Mercury</span>
+    </div>
+    <!-- Thallium -->
+    <div class="element" data-symbol="Tl" data-name="Thallium" data-number="81" data-category="Post-transition Metal">
+    <span class="number">81</span>
+    <span class="symbol">Tl</span>
+    <span class="name">Thallium</span>
+    </div>
+    <!-- Lead -->
+    <div class="element" data-symbol="Pb" data-name="Lead" data-number="82" data-category="Post-transition Metal">
+    <span class="number">82</span>
+    <span class="symbol">Pb</span>
+    <span class="name">Lead</span>
+    </div>
+    <!-- Bismuth -->
+    <div class="element" data-symbol="Bi" data-name="Bismuth" data-number="83" data-category="Post-transition Metal">
+    <span class="number">83</span>
+    <span class="symbol">Bi</span>
+    <span class="name">Bismuth</span>
+    </div>
+    <!-- Polonium -->
+    <div class="element" data-symbol="Po" data-name="Polonium" data-number="84" data-category="Post-transition Metal">
+    <span class="number">84</span>
+    <span class="symbol">Po</span>
+    <span class="name">Polonium</span>
+    </div>
+    <!-- Astatine -->
+    <div class="element" data-symbol="At" data-name="Astatine" data-number="85" data-category="Halogen">
+    <span class="number">85</span>
+    <span class="symbol">At</span>
+    <span class="name">Astatine</span>
+    </div>
+    <!-- Radon -->
+    <div class="element" data-symbol="Rn" data-name="Radon" data-number="86" data-category="Noble Gas">
+    <span class="number">86</span>
+    <span class="symbol">Rn</span>
+    <span class="name">Radon</span>
+    </div>
+    <!-- Francium -->
+    <div class="element" data-symbol="Fr" data-name="Francium" data-number="87" data-category="Alkali Metal">
+    <span class="number">87</span>
+    <span class="symbol">Fr</span>
+    <span class="name">Francium</span>
+    </div>
+    <!-- Radium -->
+    <div class="element" data-symbol="Ra" data-name="Radium" data-number="88" data-category="Alkaline Earth Metal">
+    <span class="number">88</span>
+    <span class="symbol">Ra</span>
+    <span class="name">Radium</span>
+    </div>
+    <!-- Actinium -->
+    <div class="element" data-symbol="Ac" data-name="Actinium" data-number="89" data-category="Actinide">
+    <span class="number">89</span>
+    <span class="symbol">Ac</span>
+    <span class="name">Actinium</span>
+    </div>
+    <!-- Thorium -->
+    <div class="element" data-symbol="Th" data-name="Thorium" data-number="90" data-category="Actinide">
+    <span class="number">90</span>
+    <span class="symbol">Th</span>
+    <span class="name">Thorium</span>
+    </div>
+    <!-- Protactinium -->
+    <div class="element" data-symbol="Pa" data-name="Protactinium" data-number="91" data-category="Actinide">
+    <span class="number">91</span>
+    <span class="symbol">Pa</span>
+    <span class="name">Protactinium</span>
+    </div>
+    <!-- Uranium -->
+    <div class="element" data-symbol="U" data-name="Uranium" data-number="92" data-category="Actinide">
+    <span class="number">92</span>
+    <span class="symbol">U</span>
+    <span class="name">Uranium</span>
+    </div>
+    <!-- Neptunium -->
+    <div class="element" data-symbol="Np" data-name="Neptunium" data-number="93" data-category="Actinide">
+    <span class="number">93</span>
+    <span class="symbol">Np</span>
+    <span class="name">Neptunium</span>
+    </div>
+    <!-- Plutonium -->
+    <div class="element" data-symbol="Pu" data-name="Plutonium" data-number="94" data-category="Actinide">
+    <span class="number">94</span>
+    <span class="symbol">Pu</span>
+    <span class="name">Plutonium</span>
+    </div>
+    <!-- Americium -->
+    <div class="element" data-symbol="Am" data-name="Americium" data-number="95" data-category="Actinide">
+    <span class="number">95</span>
+    <span class="symbol">Am</span>
+    <span class="name">Americium</span>
+    </div>
+    <!-- Curium -->
+    <div class="element" data-symbol="Cm" data-name="Curium" data-number="96" data-category="Actinide">
+    <span class="number">96</span>
+    <span class="symbol">Cm</span>
+    <span class="name">Curium</span>
+    </div>
+    <!-- Berkelium -->
+    <div class="element" data-symbol="Bk" data-name="Berkelium" data-number="97" data-category="Actinide">
+    <span class="number">97</span>
+    <span class="symbol">Bk</span>
+    <span class="name">Berkelium</span>
+    </div>
+    <!-- Californium -->
+    <div class="element" data-symbol="Cf" data-name="Californium" data-number="98" data-category="Actinide">
+    <span class="number">98</span>
+    <span class="symbol">Cf</span>
+    <span class="name">Californium</span>
+    </div>
+    <!-- Einsteinium -->
+    <div class="element" data-symbol="Es" data-name="Einsteinium" data-number="99" data-category="Actinide">
+    <span class="number">99</span>
+    <span class="symbol">Es</span>
+    <span class="name">Einsteinium</span>
+    </div>
+    <!-- Fermium -->
+    <div class="element" data-symbol="Fm" data-name="Fermium" data-number="100" data-category="Actinide">
+    <span class="number">100</span>
+    <span class="symbol">Fm</span>
+    <span class="name">Fermium</span>
+    </div>
+    <!-- Mendelevium -->
+    <div class="element" data-symbol="Md" data-name="Mendelevium" data-number="101" data-category="Actinide">
+    <span class="number">101</span>
+    <span class="symbol">Md</span>
+    <span class="name">Mendelevium</span>
+    </div>
+    <!-- Nobelium -->
+    <div class="element" data-symbol="No" data-name="Nobelium" data-number="102" data-category="Actinide">
+    <span class="number">102</span>
+    <span class="symbol">No</span>
+    <span class="name">Nobelium</span>
+    </div>
+    <!-- Lawrencium -->
+    <div class="element" data-symbol="Lr" data-name="Lawrencium" data-number="103" data-category="Actinide">
+    <span class="number">103</span>
+    <span class="symbol">Lr</span>
+    <span class="name">Lawrencium</span>
+    </div>
+    <!-- Rutherfordium -->
+    <div class="element" data-symbol="Rf" data-name="Rutherfordium" data-number="104" data-category="Transition Metal">
+    <span class="number">104</span>
+    <span class="symbol">Rf</span>
+    <span class="name">Rutherfordium</span>
+    </div>
+    <!-- Dubnium -->
+    <div class="element" data-symbol="Db" data-name="Dubnium" data-number="105" data-category="Transition Metal">
+    <span class="number">105</span>
+    <span class="symbol">Db</span>
+    <span class="name">Dubnium</span>
+    </div>
+    <!-- Seaborgium -->
+    <div class="element" data-symbol="Sg" data-name="Seaborgium" data-number="106" data-category="Transition Metal">
+    <span class="number">106</span>
+    <span class="symbol">Sg</span>
+    <span class="name">Seaborgium</span>
+    </div>
+    <!-- Bohrium -->
+    <div class="element" data-symbol="Bh" data-name="Bohrium" data-number="107" data-category="Transition Metal">
+    <span class="number">107</span>
+    <span class="symbol">Bh</span>
+    <span class="name">Bohrium</span>
+    </div>
+    <!-- Hassium -->
+    <div class="element" data-symbol="Hs" data-name="Hassium" data-number="108" data-category="Transition Metal">
+    <span class="number">108</span>
+    <span class="symbol">Hs</span>
+    <span class="name">Hassium</span>
+    </div>
+    <!-- Meitnerium -->
+    <div class="element" data-symbol="Mt" data-name="Meitnerium" data-number="109" data-category="Transition Metal">
+    <span class="number">109</span>
+    <span class="symbol">Mt</span>
+    <span class="name">Meitnerium</span>
+    </div>
+    <!-- Darmstadtium -->
+    <div class="element" data-symbol="Ds" data-name="Darmstadtium" data-number="110" data-category="Transition Metal">
+    <span class="number">110</span>
+    <span class="symbol">Ds</span>
+    <span class="name">Darmstadtium</span>
+    </div>
+    <!-- Roentgenium -->
+    <div class="element" data-symbol="Rg" data-name="Roentgenium" data-number="111" data-category="Transition Metal">
+    <span class="number">111</span>
+    <span class="symbol">Rg</span>
+    <span class="name">Roentgenium</span>
+    </div>
+    <!-- Copernicium -->
+    <div class="element" data-symbol="Cn" data-name="Copernicium" data-number="112" data-category="Transition Metal">
+    <span class="number">112</span>
+    <span class="symbol">Cn</span>
+    <span class="name">Copernicium</span>
+    </div>
+    <!-- Nihonium -->
+    <div class="element" data-symbol="Nh" data-name="Nihonium" data-number="113" data-category="Post-transition Metal">
+    <span class="number">113</span>
+    <span class="symbol">Nh</span>
+    <span class="name">Nihonium</span>
+    </div>
+    <!-- Flerovium -->
+    <div class="element" data-symbol="Fl" data-name="Flerovium" data-number="114" data-category="Post-transition Metal">
+    <span class="number">114</span>
+    <span class="symbol">Fl</span>
+    <span class="name">Flerovium</span>
+    </div>
+    <!-- Moscovium -->
+    <div class="element" data-symbol="Mc" data-name="Moscovium" data-number="115" data-category="Post-transition Metal">
+    <span class="number">115</span>
+    <span class="symbol">Mc</span>
+    <span class="name">Moscovium</span>
+    </div>
+    <!-- Livermorium -->
+    <div class="element" data-symbol="Lv" data-name="Livermorium" data-number="116" data-category="Post-transition Metal">
+    <span class="number">116</span>
+    <span class="symbol">Lv</span>
+    <span class="name">Livermorium</span>
+    </div>
+    <!-- Tennessine -->
+    <div class="element" data-symbol="Ts" data-name="Tennessine" data-number="117" data-category="Halogen">
+    <span class="number">117</span>
+    <span class="symbol">Ts</span>
+    <span class="name">Tennessine</span>
+    </div>
+    <!-- Oganesson -->
+    <div class="element" data-symbol="Og" data-name="Oganesson" data-number="118" data-category="Noble Gas">
+    <span class="number">118</span>
+    <span class="symbol">Og</span>
+    <span class="name">Oganesson</span>
+    </div>
+
+
+
+
+
+
+    <!-- Popup for Hydrogen -->
+<div class="popup" id="popup-H">
+    <div class="popup-content">
+      <span class="close-btn" id="close-H">&times;</span>
+      <h2>Hydrogen</h2>
+      <p><strong>Atomic Number:</strong> 1</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> H</p>
+      <p><strong>Atomic Weight:</strong> 1.008 u</p>
+      <p><strong>Density:</strong> 0.08988 g/L</p>
+      <p><strong>Melting Point:</strong> -259.16°C</p>
+      <p><strong>Boiling Point:</strong> -252.87°C</p>
+      <p><strong>Description:</strong> Hydrogen is the lightest and most abundant chemical element in the universe. It is essential for the formation of stars and is a key component of water.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Helium -->
+  <div class="popup" id="popup-He">
+    <div class="popup-content">
+      <span class="close-btn" id="close-He">&times;</span>
+      <h2>Helium</h2>
+      <p><strong>Atomic Number:</strong> 2</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> He</p>
+      <p><strong>Atomic Weight:</strong> 4.0026 u</p>
+      <p><strong>Density:</strong> 0.1786 g/L</p>
+      <p><strong>Melting Point:</strong> -272.2°C</p>
+      <p><strong>Boiling Point:</strong> -268.93°C</p>
+      <p><strong>Description:</strong> Helium is the second lightest element in the periodic table and is used in cryogenics, medical equipment, and for filling balloons.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Lithium -->
+  <div class="popup" id="popup-Li">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Li">&times;</span>
+      <h2>Lithium</h2>
+      <p><strong>Atomic Number:</strong> 3</p>
+      <p><strong>Category:</strong> Alkali Metal</p>
+      <p><strong>Symbol:</strong> Li</p>
+      <p><strong>Atomic Weight:</strong> 6.94 u</p>
+      <p><strong>Density:</strong> 0.534 g/cm³</p>
+      <p><strong>Melting Point:</strong> 180.54°C</p>
+      <p><strong>Boiling Point:</strong> 1590°C</p>
+      <p><strong>Description:</strong> Lithium is a soft, silvery-white alkali metal used in rechargeable batteries, heat-resistant glass, and lithium-based medications.</p>
+    </div>
+  </div>
+  
+  <!-- Additional popups for other elements can follow the same structure -->
+  <!-- Popup for Beryllium -->
+<div class="popup" id="popup-Be">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Be">&times;</span>
+      <h2>Beryllium</h2>
+      <p><strong>Atomic Number:</strong> 4</p>
+      <p><strong>Category:</strong> Alkaline Earth Metal</p>
+      <p><strong>Symbol:</strong> Be</p>
+      <p><strong>Atomic Weight:</strong> 9.0122 u</p>
+      <p><strong>Density:</strong> 1.848 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1287°C</p>
+      <p><strong>Boiling Point:</strong> 2469°C</p>
+      <p><strong>Description:</strong> Beryllium is a rare, hard, strong, silvery-gray metal used as a moderator in nuclear reactors and in aerospace materials.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Boron -->
+  <div class="popup" id="popup-B">
+    <div class="popup-content">
+      <span class="close-btn" id="close-B">&times;</span>
+      <h2>Boron</h2>
+      <p><strong>Atomic Number:</strong> 5</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> B</p>
+      <p><strong>Atomic Weight:</strong> 10.81 u</p>
+      <p><strong>Density:</strong> 2.34 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2076°C</p>
+      <p><strong>Boiling Point:</strong> 3927°C</p>
+      <p><strong>Description:</strong> Boron is a metalloid element used in fiberglass, ceramics, and as a neutron absorber in nuclear reactors.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Carbon -->
+  <div class="popup" id="popup-C">
+    <div class="popup-content">
+      <span class="close-btn" id="close-C">&times;</span>
+      <h2>Carbon</h2>
+      <p><strong>Atomic Number:</strong> 6</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> C</p>
+      <p><strong>Atomic Weight:</strong> 12.011 u</p>
+      <p><strong>Density:</strong> 2.267 g/cm³ (diamond)</p>
+      <p><strong>Melting Point:</strong> 3915°C (diamond)</p>
+      <p><strong>Boiling Point:</strong> Sublimates at 3915°C</p>
+      <p><strong>Description:</strong> Carbon is a nonmetal element found in all living organisms. It is the basis for organic chemistry and exists in several forms, including graphite and diamond.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Nitrogen -->
+  <div class="popup" id="popup-N">
+    <div class="popup-content">
+      <span class="close-btn" id="close-N">&times;</span>
+      <h2>Nitrogen</h2>
+      <p><strong>Atomic Number:</strong> 7</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> N</p>
+      <p><strong>Atomic Weight:</strong> 14.007 u</p>
+      <p><strong>Density:</strong> 1.2506 g/L</p>
+      <p><strong>Melting Point:</strong> -209.86°C</p>
+      <p><strong>Boiling Point:</strong> -195.79°C</p>
+      <p><strong>Description:</strong> Nitrogen is a colorless, odorless gas that makes up 78% of Earth's atmosphere. It is essential for life, forming amino acids and proteins.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Oxygen -->
+  <div class="popup" id="popup-O">
+    <div class="popup-content">
+      <span class="close-btn" id="close-O">&times;</span>
+      <h2>Oxygen</h2>
+      <p><strong>Atomic Number:</strong> 8</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> O</p>
+      <p><strong>Atomic Weight:</strong> 15.999 u</p>
+      <p><strong>Density:</strong> 1.429 g/L</p>
+      <p><strong>Melting Point:</strong> -218.79°C</p>
+      <p><strong>Boiling Point:</strong> -182.96°C</p>
+      <p><strong>Description:</strong> Oxygen is essential for respiration in most living organisms and is the most abundant element in Earth's crust.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Fluorine -->
+  <div class="popup" id="popup-F">
+    <div class="popup-content">
+      <span class="close-btn" id="close-F">&times;</span>
+      <h2>Fluorine</h2>
+      <p><strong>Atomic Number:</strong> 9</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> F</p>
+      <p><strong>Atomic Weight:</strong> 18.998 u</p>
+      <p><strong>Density:</strong> 1.696 g/L</p>
+      <p><strong>Melting Point:</strong> -219.67°C</p>
+      <p><strong>Boiling Point:</strong> -188.12°C</p>
+      <p><strong>Description:</strong> Fluorine is the most reactive and electronegative element. It is used in the production of Teflon and in fluoridation of water.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Neon -->
+  <div class="popup" id="popup-Ne">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ne">&times;</span>
+      <h2>Neon</h2>
+      <p><strong>Atomic Number:</strong> 10</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> Ne</p>
+      <p><strong>Atomic Weight:</strong> 20.180 u</p>
+      <p><strong>Density:</strong> 0.9002 g/L</p>
+      <p><strong>Melting Point:</strong> -248.59°C</p>
+      <p><strong>Boiling Point:</strong> -246.05°C</p>
+      <p><strong>Description:</strong> Neon is a colorless, odorless noble gas used in neon signs and high-voltage indicators.</p>
+    </div>
+  </div>
+
+
+  <!-- Popup for Sodium -->
+<div class="popup" id="popup-Na">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Na">&times;</span>
+      <h2>Sodium</h2>
+      <p><strong>Atomic Number:</strong> 11</p>
+      <p><strong>Category:</strong> Alkali Metal</p>
+      <p><strong>Symbol:</strong> Na</p>
+      <p><strong>Atomic Weight:</strong> 22.990 u</p>
+      <p><strong>Density:</strong> 0.968 g/cm³</p>
+      <p><strong>Melting Point:</strong> 97.72°C</p>
+      <p><strong>Boiling Point:</strong> 883°C</p>
+      <p><strong>Description:</strong> Sodium is a soft, silvery-white, highly reactive metal used in industrial applications, such as soap-making and glass production.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Magnesium -->
+  <div class="popup" id="popup-Mg">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Mg">&times;</span>
+      <h2>Magnesium</h2>
+      <p><strong>Atomic Number:</strong> 12</p>
+      <p><strong>Category:</strong> Alkaline Earth Metal</p>
+      <p><strong>Symbol:</strong> Mg</p>
+      <p><strong>Atomic Weight:</strong> 24.305 u</p>
+      <p><strong>Density:</strong> 1.738 g/cm³</p>
+      <p><strong>Melting Point:</strong> 650°C</p>
+      <p><strong>Boiling Point:</strong> 1090°C</p>
+      <p><strong>Description:</strong> Magnesium is a light, silvery-white metal used in manufacturing aluminum alloys, and in the production of fireworks and flares.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Aluminum -->
+  <div class="popup" id="popup-Al">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Al">&times;</span>
+      <h2>Aluminum</h2>
+      <p><strong>Atomic Number:</strong> 13</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Al</p>
+      <p><strong>Atomic Weight:</strong> 26.982 u</p>
+      <p><strong>Density:</strong> 2.70 g/cm³</p>
+      <p><strong>Melting Point:</strong> 660.3°C</p>
+      <p><strong>Boiling Point:</strong> 2470°C</p>
+      <p><strong>Description:</strong> Aluminum is a lightweight, silvery metal widely used in the manufacture of aircraft, packaging, and kitchenware.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Silicon -->
+  <div class="popup" id="popup-Si">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Si">&times;</span>
+      <h2>Silicon</h2>
+      <p><strong>Atomic Number:</strong> 14</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> Si</p>
+      <p><strong>Atomic Weight:</strong> 28.085 u</p>
+      <p><strong>Density:</strong> 2.33 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1414°C</p>
+      <p><strong>Boiling Point:</strong> 2900°C</p>
+      <p><strong>Description:</strong> Silicon is widely used in the electronics industry for making semiconductors, and in the manufacturing of solar cells.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Phosphorus -->
+  <div class="popup" id="popup-P">
+    <div class="popup-content">
+      <span class="close-btn" id="close-P">&times;</span>
+      <h2>Phosphorus</h2>
+      <p><strong>Atomic Number:</strong> 15</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> P</p>
+      <p><strong>Atomic Weight:</strong> 30.974 u</p>
+      <p><strong>Density:</strong> 1.823 g/cm³</p>
+      <p><strong>Melting Point:</strong> 44.2°C</p>
+      <p><strong>Boiling Point:</strong> 280°C</p>
+      <p><strong>Description:</strong> Phosphorus is used in fertilizers, detergents, and matches. It exists in white, red, and black forms.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Sulfur -->
+  <div class="popup" id="popup-S">
+    <div class="popup-content">
+      <span class="close-btn" id="close-S">&times;</span>
+      <h2>Sulfur</h2>
+      <p><strong>Atomic Number:</strong> 16</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> S</p>
+      <p><strong>Atomic Weight:</strong> 32.06 u</p>
+      <p><strong>Density:</strong> 2.067 g/cm³</p>
+      <p><strong>Melting Point:</strong> 115.21°C</p>
+      <p><strong>Boiling Point:</strong> 444.6°C</p>
+      <p><strong>Description:</strong> Sulfur is a nonmetal element essential for life, primarily used in the production of sulfuric acid and in fertilizers.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Chlorine -->
+  <div class="popup" id="popup-Cl">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cl">&times;</span>
+      <h2>Chlorine</h2>
+      <p><strong>Atomic Number:</strong> 17</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> Cl</p>
+      <p><strong>Atomic Weight:</strong> 35.45 u</p>
+      <p><strong>Density:</strong> 3.214 g/L</p>
+      <p><strong>Melting Point:</strong> -101.5°C</p>
+      <p><strong>Boiling Point:</strong> -34.04°C</p>
+      <p><strong>Description:</strong> Chlorine is a greenish-yellow gas used in the production of plastics, disinfectants, and pesticides.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Argon -->
+  <div class="popup" id="popup-Ar">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ar">&times;</span>
+      <h2>Argon</h2>
+      <p><strong>Atomic Number:</strong> 18</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> Ar</p>
+      <p><strong>Atomic Weight:</strong> 39.948 u</p>
+      <p><strong>Density:</strong> 1.784 g/L</p>
+      <p><strong>Melting Point:</strong> -189.34°C</p>
+      <p><strong>Boiling Point:</strong> -185.85°C</p>
+      <p><strong>Description:</strong> Argon is an inert gas used in welding and as an insulator in windows and light bulbs.</p>
+    </div>
+  </div>
+  
+  <!-- Continue similar code for elements from 19 to 118 -->
+  
+  <!-- For example, Popup for Potassium (19) -->
+  <div class="popup" id="popup-K">
+    <div class="popup-content">
+      <span class="close-btn" id="close-K">&times;</span>
+      <h2>Potassium</h2>
+      <p><strong>Atomic Number:</strong> 19</p>
+      <p><strong>Category:</strong> Alkali Metal</p>
+      <p><strong>Symbol:</strong> K</p>
+      <p><strong>Atomic Weight:</strong> 39.098 u</p>
+      <p><strong>Density:</strong> 0.862 g/cm³</p>
+      <p><strong>Melting Point:</strong> 63.5°C</p>
+      <p><strong>Boiling Point:</strong> 759°C</p>
+      <p><strong>Description:</strong> Potassium is a highly reactive metal used in fertilizers, soap production, and in medicine.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Calcium -->
+<div class="popup" id="popup-Ca">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ca">&times;</span>
+      <h2>Calcium</h2>
+      <p><strong>Atomic Number:</strong> 20</p>
+      <p><strong>Category:</strong> Alkaline Earth Metal</p>
+      <p><strong>Symbol:</strong> Ca</p>
+      <p><strong>Atomic Weight:</strong> 40.078 u</p>
+      <p><strong>Density:</strong> 1.54 g/cm³</p>
+      <p><strong>Melting Point:</strong> 842°C</p>
+      <p><strong>Boiling Point:</strong> 1484°C</p>
+      <p><strong>Description:</strong> Calcium is a reactive metal used in construction, in cement production, and as a dietary supplement for bone health.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Scandium -->
+  <div class="popup" id="popup-Sc">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Sc">&times;</span>
+      <h2>Scandium</h2>
+      <p><strong>Atomic Number:</strong> 21</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Sc</p>
+      <p><strong>Atomic Weight:</strong> 44.956 u</p>
+      <p><strong>Density:</strong> 2.985 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1541°C</p>
+      <p><strong>Boiling Point:</strong> 2836°C</p>
+      <p><strong>Description:</strong> Scandium is used in the aerospace industry and in certain aluminum alloys to improve strength and corrosion resistance.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Titanium -->
+  <div class="popup" id="popup-Ti">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ti">&times;</span>
+      <h2>Titanium</h2>
+      <p><strong>Atomic Number:</strong> 22</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Ti</p>
+      <p><strong>Atomic Weight:</strong> 47.867 u</p>
+      <p><strong>Density:</strong> 4.506 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1668°C</p>
+      <p><strong>Boiling Point:</strong> 3287°C</p>
+      <p><strong>Description:</strong> Titanium is a strong, lightweight metal used in aerospace, medical devices, and sporting goods.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Vanadium -->
+  <div class="popup" id="popup-V">
+    <div class="popup-content">
+      <span class="close-btn" id="close-V">&times;</span>
+      <h2>Vanadium</h2>
+      <p><strong>Atomic Number:</strong> 23</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> V</p>
+      <p><strong>Atomic Weight:</strong> 50.942 u</p>
+      <p><strong>Density:</strong> 6.11 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1910°C</p>
+      <p><strong>Boiling Point:</strong> 3380°C</p>
+      <p><strong>Description:</strong> Vanadium is used in the production of high-strength steel and alloys for the automotive and aerospace industries.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Chromium -->
+  <div class="popup" id="popup-Cr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cr">&times;</span>
+      <h2>Chromium</h2>
+      <p><strong>Atomic Number:</strong> 24</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Cr</p>
+      <p><strong>Atomic Weight:</strong> 52.00 u</p>
+      <p><strong>Density:</strong> 7.19 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1907°C</p>
+      <p><strong>Boiling Point:</strong> 2671°C</p>
+      <p><strong>Description:</strong> Chromium is used for plating steel and in producing stainless steel and other alloys for industrial applications.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Manganese -->
+  <div class="popup" id="popup-Mn">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Mn">&times;</span>
+      <h2>Manganese</h2>
+      <p><strong>Atomic Number:</strong> 25</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Mn</p>
+      <p><strong>Atomic Weight:</strong> 54.938 u</p>
+      <p><strong>Density:</strong> 7.43 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1244°C</p>
+      <p><strong>Boiling Point:</strong> 2061°C</p>
+      <p><strong>Description:</strong> Manganese is used in steel production and is a key component in batteries, fertilizers, and ceramics.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Iron -->
+  <div class="popup" id="popup-Fe">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Fe">&times;</span>
+      <h2>Iron</h2>
+      <p><strong>Atomic Number:</strong> 26</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Fe</p>
+      <p><strong>Atomic Weight:</strong> 55.845 u</p>
+      <p><strong>Density:</strong> 7.87 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1538°C</p>
+      <p><strong>Boiling Point:</strong> 2862°C</p>
+      <p><strong>Description:</strong> Iron is a crucial material in construction and manufacturing, widely used in the production of steel and various alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Cobalt -->
+  <div class="popup" id="popup-Co">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Co">&times;</span>
+      <h2>Cobalt</h2>
+      <p><strong>Atomic Number:</strong> 27</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Co</p>
+      <p><strong>Atomic Weight:</strong> 58.933 u</p>
+      <p><strong>Density:</strong> 8.90 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1495°C</p>
+      <p><strong>Boiling Point:</strong> 2927°C</p>
+      <p><strong>Description:</strong> Cobalt is used in the production of magnets, batteries, and alloys, as well as in cancer treatment drugs.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Nickel -->
+  <div class="popup" id="popup-Ni">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ni">&times;</span>
+      <h2>Nickel</h2>
+      <p><strong>Atomic Number:</strong> 28</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Ni</p>
+      <p><strong>Atomic Weight:</strong> 58.693 u</p>
+      <p><strong>Density:</strong> 8.908 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1455°C</p>
+      <p><strong>Boiling Point:</strong> 2913°C</p>
+      <p><strong>Description:</strong> Nickel is used in the production of stainless steel, batteries, and coins.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Copper -->
+  <div class="popup" id="popup-Cu">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cu">&times;</span>
+      <h2>Copper</h2>
+      <p><strong>Atomic Number:</strong> 29</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Cu</p>
+      <p><strong>Atomic Weight:</strong> 63.546 u</p>
+      <p><strong>Density:</strong> 8.96 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1084.62°C</p>
+      <p><strong>Boiling Point:</strong> 2562°C</p>
+      <p><strong>Description:</strong> Copper is widely used in electrical wiring, plumbing, and in the production of alloys such as bronze and brass.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Zinc -->
+  <div class="popup" id="popup-Zn">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Zn">&times;</span>
+      <h2>Zinc</h2>
+      <p><strong>Atomic Number:</strong> 30</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Zn</p>
+      <p><strong>Atomic Weight:</strong> 65.38 u</p>
+      <p><strong>Density:</strong> 7.14 g/cm³</p>
+      <p><strong>Melting Point:</strong> 419.58°C</p>
+      <p><strong>Boiling Point:</strong> 907°C</p>
+      <p><strong>Description:</strong> Zinc is primarily used for galvanizing iron to prevent rusting and in the production of batteries and alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Gallium -->
+  <div class="popup" id="popup-Ga">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ga">&times;</span>
+      <h2>Gallium</h2>
+      <p><strong>Atomic Number:</strong> 31</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> Ga</p>
+      <p><strong>Atomic Weight:</strong> 69.723 u</p>
+      <p><strong>Density:</strong> 5.91 g/cm³</p>
+      <p><strong>Melting Point:</strong> 29.76°C</p>
+      <p><strong>Boiling Point:</strong> 2204°C</p>
+      <p><strong>Description:</strong> Gallium is used in semiconductors, LED lights, and solar cells.</p>
+    </div>
+  </div>
+  
+  <!-- Continue this pattern for elements 32 to 40 -->
+
+  <!-- Popup for Germanium -->
+<div class="popup" id="popup-Ge">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ge">&times;</span>
+      <h2>Germanium</h2>
+      <p><strong>Atomic Number:</strong> 32</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> Ge</p>
+      <p><strong>Atomic Weight:</strong> 72.63 u</p>
+      <p><strong>Density:</strong> 5.323 g/cm³</p>
+      <p><strong>Melting Point:</strong> 938.3°C</p>
+      <p><strong>Boiling Point:</strong> 2833°C</p>
+      <p><strong>Description:</strong> Germanium is used in semiconductors and fiber optics, and in infrared optics for cameras.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Arsenic -->
+  <div class="popup" id="popup-As">
+    <div class="popup-content">
+      <span class="close-btn" id="close-As">&times;</span>
+      <h2>Arsenic</h2>
+      <p><strong>Atomic Number:</strong> 33</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> As</p>
+      <p><strong>Atomic Weight:</strong> 74.922 u</p>
+      <p><strong>Density:</strong> 5.727 g/cm³</p>
+      <p><strong>Melting Point:</strong> 817°C</p>
+      <p><strong>Boiling Point:</strong> 613°C</p>
+      <p><strong>Description:</strong> Arsenic is used in semiconductors, pesticides, and glass manufacturing.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Selenium -->
+  <div class="popup" id="popup-Se">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Se">&times;</span>
+      <h2>Selenium</h2>
+      <p><strong>Atomic Number:</strong> 34</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> Se</p>
+      <p><strong>Atomic Weight:</strong> 78.971 u</p>
+      <p><strong>Density:</strong> 4.809 g/cm³</p>
+      <p><strong>Melting Point:</strong> 221°C</p>
+      <p><strong>Boiling Point:</strong> 685°C</p>
+      <p><strong>Description:</strong> Selenium is used in electronics, solar cells, and as a dietary supplement.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Bromine -->
+  <div class="popup" id="popup-Br">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Br">&times;</span>
+      <h2>Bromine</h2>
+      <p><strong>Atomic Number:</strong> 35</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> Br</p>
+      <p><strong>Atomic Weight:</strong> 79.904 u</p>
+      <p><strong>Density:</strong> 3.1028 g/cm³</p>
+      <p><strong>Melting Point:</strong> -7.2°C</p>
+      <p><strong>Boiling Point:</strong> 58.8°C</p>
+      <p><strong>Description:</strong> Bromine is used in flame retardants, in water treatment, and as an antiseptic.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Krypton -->
+  <div class="popup" id="popup-Kr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Kr">&times;</span>
+      <h2>Krypton</h2>
+      <p><strong>Atomic Number:</strong> 36</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> Kr</p>
+      <p><strong>Atomic Weight:</strong> 83.798 u</p>
+      <p><strong>Density:</strong> 3.749 g/cm³</p>
+      <p><strong>Melting Point:</strong> -157.36°C</p>
+      <p><strong>Boiling Point:</strong> -153.22°C</p>
+      <p><strong>Description:</strong> Krypton is used in high-performance light bulbs, photography, and in the production of certain lasers.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Rubidium -->
+  <div class="popup" id="popup-Rb">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Rb">&times;</span>
+      <h2>Rubidium</h2>
+      <p><strong>Atomic Number:</strong> 37</p>
+      <p><strong>Category:</strong> Alkali Metal</p>
+      <p><strong>Symbol:</strong> Rb</p>
+      <p><strong>Atomic Weight:</strong> 85.468 u</p>
+      <p><strong>Density:</strong> 1.532 g/cm³</p>
+      <p><strong>Melting Point:</strong> 39.3°C</p>
+      <p><strong>Boiling Point:</strong> 688°C</p>
+      <p><strong>Description:</strong> Rubidium is used in research, in atomic clocks, and in making special glasses.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Strontium -->
+  <div class="popup" id="popup-Sr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Sr">&times;</span>
+      <h2>Strontium</h2>
+      <p><strong>Atomic Number:</strong> 38</p>
+      <p><strong>Category:</strong> Alkaline Earth Metal</p>
+      <p><strong>Symbol:</strong> Sr</p>
+      <p><strong>Atomic Weight:</strong> 87.62 u</p>
+      <p><strong>Density:</strong> 2.64 g/cm³</p>
+      <p><strong>Melting Point:</strong> 777°C</p>
+      <p><strong>Boiling Point:</strong> 1382°C</p>
+      <p><strong>Description:</strong> Strontium is used in fireworks, magnets, and in the production of ferrite ceramics.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Yttrium -->
+  <div class="popup" id="popup-Y">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Y">&times;</span>
+      <h2>Yttrium</h2>
+      <p><strong>Atomic Number:</strong> 39</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Y</p>
+      <p><strong>Atomic Weight:</strong> 88.906 u</p>
+      <p><strong>Density:</strong> 4.469 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1526°C</p>
+      <p><strong>Boiling Point:</strong> 3337°C</p>
+      <p><strong>Description:</strong> Yttrium is used in the production of superconductors, LEDs, and in cancer treatment drugs.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Zirconium -->
+  <div class="popup" id="popup-Zr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Zr">&times;</span>
+      <h2>Zirconium</h2>
+      <p><strong>Atomic Number:</strong> 40</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Zr</p>
+      <p><strong>Atomic Weight:</strong> 91.224 u</p>
+      <p><strong>Density:</strong> 6.52 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1855°C</p>
+      <p><strong>Boiling Point:</strong> 4377°C</p>
+      <p><strong>Description:</strong> Zirconium is used in nuclear reactors, in dental materials, and as a refractory material in high-temperature applications.</p>
+    </div>
+  </div>
+
+  <!-- Popup for Niobium -->
+<div class="popup" id="popup-Nb">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Nb">&times;</span>
+      <h2>Niobium</h2>
+      <p><strong>Atomic Number:</strong> 41</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Nb</p>
+      <p><strong>Atomic Weight:</strong> 92.906 u</p>
+      <p><strong>Density:</strong> 8.57 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2477°C</p>
+      <p><strong>Boiling Point:</strong> 4744°C</p>
+      <p><strong>Description:</strong> Niobium is used in superconducting magnets, nuclear reactors, and in the aerospace industry.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Molybdenum -->
+  <div class="popup" id="popup-Mo">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Mo">&times;</span>
+      <h2>Molybdenum</h2>
+      <p><strong>Atomic Number:</strong> 42</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Mo</p>
+      <p><strong>Atomic Weight:</strong> 95.95 u</p>
+      <p><strong>Density:</strong> 10.28 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2623°C</p>
+      <p><strong>Boiling Point:</strong> 4639°C</p>
+      <p><strong>Description:</strong> Molybdenum is used in steel alloys, in electrical contacts, and in filaments for light bulbs.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Technetium -->
+  <div class="popup" id="popup-Tc">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Tc">&times;</span>
+      <h2>Technetium</h2>
+      <p><strong>Atomic Number:</strong> 43</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Tc</p>
+      <p><strong>Atomic Weight:</strong> 98 u</p>
+      <p><strong>Density:</strong> 11 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2157°C</p>
+      <p><strong>Boiling Point:</strong> 4265°C</p>
+      <p><strong>Description:</strong> Technetium is used in medical imaging, radiotherapy, and as a catalyst in chemical reactions.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Ruthenium -->
+  <div class="popup" id="popup-Ru">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ru">&times;</span>
+      <h2>Ruthenium</h2>
+      <p><strong>Atomic Number:</strong> 44</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Ru</p>
+      <p><strong>Atomic Weight:</strong> 101.07 u</p>
+      <p><strong>Density:</strong> 12.37 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2334°C</p>
+      <p><strong>Boiling Point:</strong> 4150°C</p>
+      <p><strong>Description:</strong> Ruthenium is used in electrical contacts, thermocouples, and in jewelry.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Rhodium -->
+  <div class="popup" id="popup-Rh">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Rh">&times;</span>
+      <h2>Rhodium</h2>
+      <p><strong>Atomic Number:</strong> 45</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Rh</p>
+      <p><strong>Atomic Weight:</strong> 102.91 u</p>
+      <p><strong>Density:</strong> 12.41 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1964°C</p>
+      <p><strong>Boiling Point:</strong> 3695°C</p>
+      <p><strong>Description:</strong> Rhodium is used in catalytic converters, in jewelry, and as a coating for optical instruments.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Palladium -->
+  <div class="popup" id="popup-Pd">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pd">&times;</span>
+      <h2>Palladium</h2>
+      <p><strong>Atomic Number:</strong> 46</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Pd</p>
+      <p><strong>Atomic Weight:</strong> 106.42 u</p>
+      <p><strong>Density:</strong> 12.02 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1554°C</p>
+      <p><strong>Boiling Point:</strong> 2963°C</p>
+      <p><strong>Description:</strong> Palladium is used in catalytic converters, hydrogen storage, and in electronics.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Silver -->
+  <div class="popup" id="popup-Ag">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ag">&times;</span>
+      <h2>Silver</h2>
+      <p><strong>Atomic Number:</strong> 47</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Ag</p>
+      <p><strong>Atomic Weight:</strong> 107.87 u</p>
+      <p><strong>Density:</strong> 10.49 g/cm³</p>
+      <p><strong>Melting Point:</strong> 961.8°C</p>
+      <p><strong>Boiling Point:</strong> 2162°C</p>
+      <p><strong>Description:</strong> Silver is used in jewelry, silverware, and as a conductor in electronics.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Cadmium -->
+  <div class="popup" id="popup-Cd">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cd">&times;</span>
+      <h2>Cadmium</h2>
+      <p><strong>Atomic Number:</strong> 48</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Cd</p>
+      <p><strong>Atomic Weight:</strong> 112.41 u</p>
+      <p><strong>Density:</strong> 8.65 g/cm³</p>
+      <p><strong>Melting Point:</strong> 321.07°C</p>
+      <p><strong>Boiling Point:</strong> 767°C</p>
+      <p><strong>Description:</strong> Cadmium is used in rechargeable batteries, electroplating, and in pigments.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Indium -->
+  <div class="popup" id="popup-In">
+    <div class="popup-content">
+      <span class="close-btn" id="close-In">&times;</span>
+      <h2>Indium</h2>
+      <p><strong>Atomic Number:</strong> 49</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> In</p>
+      <p><strong>Atomic Weight:</strong> 114.82 u</p>
+      <p><strong>Density:</strong> 7.31 g/cm³</p>
+      <p><strong>Melting Point:</strong> 156.6°C</p>
+      <p><strong>Boiling Point:</strong> 2072°C</p>
+      <p><strong>Description:</strong> Indium is used in electronics, semiconductors, and solar cells.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Tin -->
+  <div class="popup" id="popup-Sn">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Sn">&times;</span>
+      <h2>Tin</h2>
+      <p><strong>Atomic Number:</strong> 50</p>
+      <p><strong>Category:</strong> Metal</p>
+      <p><strong>Symbol:</strong> Sn</p>
+      <p><strong>Atomic Weight:</strong> 118.71 u</p>
+      <p><strong>Density:</strong> 7.31 g/cm³</p>
+      <p><strong>Melting Point:</strong> 231.93°C</p>
+      <p><strong>Boiling Point:</strong> 2602°C</p>
+      <p><strong>Description:</strong> Tin is used in alloys, soldering, and as a coating for other metals.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Antimony -->
+  <div class="popup" id="popup-Sb">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Sb">&times;</span>
+      <h2>Antimony</h2>
+      <p><strong>Atomic Number:</strong> 51</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> Sb</p>
+      <p><strong>Atomic Weight:</strong> 121.76 u</p>
+      <p><strong>Density:</strong> 6.697 g/cm³</p>
+      <p><strong>Melting Point:</strong> 630.63°C</p>
+      <p><strong>Boiling Point:</strong> 1587°C</p>
+      <p><strong>Description:</strong> Antimony is used in flame retardants, semiconductors, and lead alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Tellurium -->
+  <div class="popup" id="popup-Te">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Te">&times;</span>
+      <h2>Tellurium</h2>
+      <p><strong>Atomic Number:</strong> 52</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> Te</p>
+      <p><strong>Atomic Weight:</strong> 127.60 u</p>
+      <p><strong>Density:</strong> 6.24 g/cm³</p>
+      <p><strong>Melting Point:</strong> 452°C</p>
+      <p><strong>Boiling Point:</strong> 988°C</p>
+      <p><strong>Description:</strong> Tellurium is used in solar cells, in thermoelectric devices, and in alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Iodine -->
+  <div class="popup" id="popup-I">
+    <div class="popup-content">
+      <span class="close-btn" id="close-I">&times;</span>
+      <h2>Iodine</h2>
+      <p><strong>Atomic Number:</strong> 53</p>
+      <p><strong>Category:</strong> Nonmetal</p>
+      <p><strong>Symbol:</strong> I</p>
+      <p><strong>Atomic Weight:</strong> 126.90 u</p>
+      <p><strong>Density:</strong> 4.933 g/cm³</p>
+      <p><strong>Melting Point:</strong> 113.7°C</p>
+      <p><strong>Boiling Point:</strong> 184.3°C</p>
+      <p><strong>Description:</strong> Iodine is used in medical applications, in disinfectants, and in the production of iodine compounds.</p>
+    </div>
+  </div>
+
+  <!-- Popup for Xenon -->
+<div class="popup" id="popup-Xe">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Xe">&times;</span>
+      <h2>Xenon</h2>
+      <p><strong>Atomic Number:</strong> 54</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> Xe</p>
+      <p><strong>Atomic Weight:</strong> 131.29 u</p>
+      <p><strong>Density:</strong> 5.894 g/cm³</p>
+      <p><strong>Melting Point:</strong> -111.8°C</p>
+      <p><strong>Boiling Point:</strong> -108.1°C</p>
+      <p><strong>Description:</strong> Xenon is used in lighting, anesthesia, and in specialized imaging techniques.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Cesium -->
+  <div class="popup" id="popup-Cs">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cs">&times;</span>
+      <h2>Cesium</h2>
+      <p><strong>Atomic Number:</strong> 55</p>
+      <p><strong>Category:</strong> Alkali Metal</p>
+      <p><strong>Symbol:</strong> Cs</p>
+      <p><strong>Atomic Weight:</strong> 132.91 u</p>
+      <p><strong>Density:</strong> 1.93 g/cm³</p>
+      <p><strong>Melting Point:</strong> 28.44°C</p>
+      <p><strong>Boiling Point:</strong> 671°C</p>
+      <p><strong>Description:</strong> Cesium is used in atomic clocks, in oil drilling, and in research.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Barium -->
+  <div class="popup" id="popup-Ba">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ba">&times;</span>
+      <h2>Barium</h2>
+      <p><strong>Atomic Number:</strong> 56</p>
+      <p><strong>Category:</strong> Alkaline Earth Metal</p>
+      <p><strong>Symbol:</strong> Ba</p>
+      <p><strong>Atomic Weight:</strong> 137.33 u</p>
+      <p><strong>Density:</strong> 3.62 g/cm³</p>
+      <p><strong>Melting Point:</strong> 727°C</p>
+      <p><strong>Boiling Point:</strong> 1640°C</p>
+      <p><strong>Description:</strong> Barium is used in fireworks, drilling fluids, and in radiology as a contrast medium.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Lanthanum -->
+  <div class="popup" id="popup-La">
+    <div class="popup-content">
+      <span class="close-btn" id="close-La">&times;</span>
+      <h2>Lanthanum</h2>
+      <p><strong>Atomic Number:</strong> 57</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> La</p>
+      <p><strong>Atomic Weight:</strong> 138.91 u</p>
+      <p><strong>Density:</strong> 6.15 g/cm³</p>
+      <p><strong>Melting Point:</strong> 920°C</p>
+      <p><strong>Boiling Point:</strong> 3469°C</p>
+      <p><strong>Description:</strong> Lanthanum is used in catalysts, hydrogen storage, and in camera lenses.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Cerium -->
+  <div class="popup" id="popup-Ce">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ce">&times;</span>
+      <h2>Cerium</h2>
+      <p><strong>Atomic Number:</strong> 58</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Ce</p>
+      <p><strong>Atomic Weight:</strong> 140.12 u</p>
+      <p><strong>Density:</strong> 6.77 g/cm³</p>
+      <p><strong>Melting Point:</strong> 798°C</p>
+      <p><strong>Boiling Point:</strong> 3257°C</p>
+      <p><strong>Description:</strong> Cerium is used in catalysts, in self-cleaning ovens, and in glass polishing.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Praseodymium -->
+  <div class="popup" id="popup-Pr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pr">&times;</span>
+      <h2>Praseodymium</h2>
+      <p><strong>Atomic Number:</strong> 59</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Pr</p>
+      <p><strong>Atomic Weight:</strong> 140.91 u</p>
+      <p><strong>Density:</strong> 6.77 g/cm³</p>
+      <p><strong>Melting Point:</strong> 931°C</p>
+      <p><strong>Boiling Point:</strong> 3520°C</p>
+      <p><strong>Description:</strong> Praseodymium is used in aircraft engines, in magnets, and in welding electrodes.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Neodymium -->
+  <div class="popup" id="popup-Nd">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Nd">&times;</span>
+      <h2>Neodymium</h2>
+      <p><strong>Atomic Number:</strong> 60</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Nd</p>
+      <p><strong>Atomic Weight:</strong> 144.24 u</p>
+      <p><strong>Density:</strong> 7.01 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1021°C</p>
+      <p><strong>Boiling Point:</strong> 3074°C</p>
+      <p><strong>Description:</strong> Neodymium is used in strong magnets, lasers, and in the production of glass and ceramics.</p>
+    </div>
+  </div>
+
+  <!-- Popup for Promethium -->
+<div class="popup" id="popup-Pm">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pm">&times;</span>
+      <h2>Promethium</h2>
+      <p><strong>Atomic Number:</strong> 61</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Pm</p>
+      <p><strong>Atomic Weight:</strong> 145 u</p>
+      <p><strong>Density:</strong> 7.264 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1100°C</p>
+      <p><strong>Boiling Point:</strong> 3000°C</p>
+      <p><strong>Description:</strong> Promethium is a rare radioactive element used in atomic batteries and in some lighting applications.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Samarium -->
+  <div class="popup" id="popup-Sm">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Sm">&times;</span>
+      <h2>Samarium</h2>
+      <p><strong>Atomic Number:</strong> 62</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Sm</p>
+      <p><strong>Atomic Weight:</strong> 150.36 u</p>
+      <p><strong>Density:</strong> 7.52 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1074°C</p>
+      <p><strong>Boiling Point:</strong> 1900°C</p>
+      <p><strong>Description:</strong> Samarium is used in magnets, catalysts, and in nuclear reactors as a neutron absorber.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Europium -->
+  <div class="popup" id="popup-Eu">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Eu">&times;</span>
+      <h2>Europium</h2>
+      <p><strong>Atomic Number:</strong> 63</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Eu</p>
+      <p><strong>Atomic Weight:</strong> 151.98 u</p>
+      <p><strong>Density:</strong> 5.243 g/cm³</p>
+      <p><strong>Melting Point:</strong> 826°C</p>
+      <p><strong>Boiling Point:</strong> 1597°C</p>
+      <p><strong>Description:</strong> Europium is used in phosphorescent and fluorescent applications, and in making red and blue phosphors for color television tubes.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Gadolinium -->
+  <div class="popup" id="popup-Gd">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Gd">&times;</span>
+      <h2>Gadolinium</h2>
+      <p><strong>Atomic Number:</strong> 64</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Gd</p>
+      <p><strong>Atomic Weight:</strong> 157.25 u</p>
+      <p><strong>Density:</strong> 7.90 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1313°C</p>
+      <p><strong>Boiling Point:</strong> 3266°C</p>
+      <p><strong>Description:</strong> Gadolinium is used in medical imaging, nuclear reactors, and in MRI contrast agents.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Terbium -->
+  <div class="popup" id="popup-Tb">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Tb">&times;</span>
+      <h2>Terbium</h2>
+      <p><strong>Atomic Number:</strong> 65</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Tb</p>
+      <p><strong>Atomic Weight:</strong> 158.93 u</p>
+      <p><strong>Density:</strong> 8.230 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1356°C</p>
+      <p><strong>Boiling Point:</strong> 3230°C</p>
+      <p><strong>Description:</strong> Terbium is used in phosphorescent applications, in solid-state devices, and in green phosphors for color television tubes.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Dysprosium -->
+  <div class="popup" id="popup-Dy">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Dy">&times;</span>
+      <h2>Dysprosium</h2>
+      <p><strong>Atomic Number:</strong> 66</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Dy</p>
+      <p><strong>Atomic Weight:</strong> 162.50 u</p>
+      <p><strong>Density:</strong> 8.550 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1407°C</p>
+      <p><strong>Boiling Point:</strong> 2567°C</p>
+      <p><strong>Description:</strong> Dysprosium is used in the production of high-performance magnets and in nuclear reactors.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Holmium -->
+  <div class="popup" id="popup-Ho">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ho">&times;</span>
+      <h2>Holmium</h2>
+      <p><strong>Atomic Number:</strong> 67</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Ho</p>
+      <p><strong>Atomic Weight:</strong> 164.93 u</p>
+      <p><strong>Density:</strong> 8.795 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1474°C</p>
+      <p><strong>Boiling Point:</strong> 2720°C</p>
+      <p><strong>Description:</strong> Holmium is used in nuclear reactors, lasers, and in the production of magnetic materials.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Erbium -->
+  <div class="popup" id="popup-Er">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Er">&times;</span>
+      <h2>Erbium</h2>
+      <p><strong>Atomic Number:</strong> 68</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Er</p>
+      <p><strong>Atomic Weight:</strong> 167.26 u</p>
+      <p><strong>Density:</strong> 9.066 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1529°C</p>
+      <p><strong>Boiling Point:</strong> 2863°C</p>
+      <p><strong>Description:</strong> Erbium is used in fiber optics, in laser technology, and in the production of strong permanent magnets.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Thulium -->
+  <div class="popup" id="popup-Tm">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Tm">&times;</span>
+      <h2>Thulium</h2>
+      <p><strong>Atomic Number:</strong> 69</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Tm</p>
+      <p><strong>Atomic Weight:</strong> 168.93 u</p>
+      <p><strong>Density:</strong> 9.320 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1818°C</p>
+      <p><strong>Boiling Point:</strong> 2223°C</p>
+      <p><strong>Description:</strong> Thulium is used in X-ray equipment, lasers, and in the production of high-powered magnets.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Ytterbium -->
+  <div class="popup" id="popup-Yb">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Yb">&times;</span>
+      <h2>Ytterbium</h2>
+      <p><strong>Atomic Number:</strong> 70</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Yb</p>
+      <p><strong>Atomic Weight:</strong> 173.04 u</p>
+      <p><strong>Density:</strong> 6.965 g/cm³</p>
+      <p><strong>Melting Point:</strong> 819°C</p>
+      <p><strong>Boiling Point:</strong> 1196°C</p>
+      <p><strong>Description:</strong> Ytterbium is used in lasers, in high-performance optical devices, and in steel alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Lutetium -->
+  <div class="popup" id="popup-Lu">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Lu">&times;</span>
+      <h2>Lutetium</h2>
+      <p><strong>Atomic Number:</strong> 71</p>
+      <p><strong>Category:</strong> Lanthanide</p>
+      <p><strong>Symbol:</strong> Lu</p>
+      <p><strong>Atomic Weight:</strong> 175.00 u</p>
+      <p><strong>Density:</strong> 9.840 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1663°C</p>
+      <p><strong>Boiling Point:</strong> 3402°C</p>
+      <p><strong>Description:</strong> Lutetium is used in positron emission tomography (PET) scanners and in the production of catalysts for petroleum refining.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Hafnium -->
+  <div class="popup" id="popup-Hf">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Hf">&times;</span>
+      <h2>Hafnium</h2>
+      <p><strong>Atomic Number:</strong> 72</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Hf</p>
+      <p><strong>Atomic Weight:</strong> 178.49 u</p>
+      <p><strong>Density:</strong> 13.31 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2233°C</p>
+      <p><strong>Boiling Point:</strong> 4603°C</p>
+      <p><strong>Description:</strong> Hafnium is used in nuclear reactors, in aerospace technology, and in high-temperature alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Tantalum -->
+  <div class="popup" id="popup-Ta">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ta">&times;</span>
+      <h2>Tantalum</h2>
+      <p><strong>Atomic Number:</strong> 73</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Ta</p>
+      <p><strong>Atomic Weight:</strong> 180.95 u</p>
+      <p><strong>Density:</strong> 16.69 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3017°C</p>
+      <p><strong>Boiling Point:</strong> 5458°C</p>
+      <p><strong>Description:</strong> Tantalum is highly corrosion-resistant and is used in electronics, medical implants, and aerospace applications.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Tungsten -->
+  <div class="popup" id="popup-W">
+    <div class="popup-content">
+      <span class="close-btn" id="close-W">&times;</span>
+      <h2>Tungsten</h2>
+      <p><strong>Atomic Number:</strong> 74</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> W</p>
+      <p><strong>Atomic Weight:</strong> 183.84 u</p>
+      <p><strong>Density:</strong> 19.25 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3422°C</p>
+      <p><strong>Boiling Point:</strong> 5555°C</p>
+      <p><strong>Description:</strong> Tungsten is known for its high melting point and is used in lightbulb filaments, welding electrodes, and military applications.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Rhenium -->
+  <div class="popup" id="popup-Re">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Re">&times;</span>
+      <h2>Rhenium</h2>
+      <p><strong>Atomic Number:</strong> 75</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Re</p>
+      <p><strong>Atomic Weight:</strong> 186.21 u</p>
+      <p><strong>Density:</strong> 21.02 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3186°C</p>
+      <p><strong>Boiling Point:</strong> 5596°C</p>
+      <p><strong>Description:</strong> Rhenium is used in high-temperature turbine engines, in electronics, and as a catalyst in petroleum refining.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Osmium -->
+  <div class="popup" id="popup-Os">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Os">&times;</span>
+      <h2>Osmium</h2>
+      <p><strong>Atomic Number:</strong> 76</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Os</p>
+      <p><strong>Atomic Weight:</strong> 190.23 u</p>
+      <p><strong>Density:</strong> 22.59 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3045°C</p>
+      <p><strong>Boiling Point:</strong> 5027°C</p>
+      <p><strong>Description:</strong> Osmium is one of the densest elements and is used in fountain pen tips, electrical contacts, and as a catalyst.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Iridium -->
+  <div class="popup" id="popup-Ir">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ir">&times;</span>
+      <h2>Iridium</h2>
+      <p><strong>Atomic Number:</strong> 77</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Ir</p>
+      <p><strong>Atomic Weight:</strong> 192.22 u</p>
+      <p><strong>Density:</strong> 22.56 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2446°C</p>
+      <p><strong>Boiling Point:</strong> 4130°C</p>
+      <p><strong>Description:</strong> Iridium is a dense, corrosion-resistant metal used in spark plugs, aerospace components, and in high-performance alloys.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Platinum -->
+  <div class="popup" id="popup-Pt">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pt">&times;</span>
+      <h2>Platinum</h2>
+      <p><strong>Atomic Number:</strong> 78</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Pt</p>
+      <p><strong>Atomic Weight:</strong> 195.08 u</p>
+      <p><strong>Density:</strong> 21.45 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1768°C</p>
+      <p><strong>Boiling Point:</strong> 3825°C</p>
+      <p><strong>Description:</strong> Platinum is widely used in catalytic converters, jewelry, and in chemical reactions due to its stability and resistance to corrosion.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Gold -->
+  <div class="popup" id="popup-Au">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Au">&times;</span>
+      <h2>Gold</h2>
+      <p><strong>Atomic Number:</strong> 79</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Au</p>
+      <p><strong>Atomic Weight:</strong> 196.97 u</p>
+      <p><strong>Density:</strong> 19.32 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1064°C</p>
+      <p><strong>Boiling Point:</strong> 2970°C</p>
+      <p><strong>Description:</strong> Gold is a precious metal used in jewelry, electronics, and as a store of value due to its rarity and non-reactivity.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Mercury -->
+  <div class="popup" id="popup-Hg">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Hg">&times;</span>
+      <h2>Mercury</h2>
+      <p><strong>Atomic Number:</strong> 80</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Hg</p>
+      <p><strong>Atomic Weight:</strong> 200.59 u</p>
+      <p><strong>Density:</strong> 13.534 g/cm³</p>
+      <p><strong>Melting Point:</strong> -38.83°C</p>
+      <p><strong>Boiling Point:</strong> 356.73°C</p>
+      <p><strong>Description:</strong> Mercury is the only metal that is liquid at room temperature and is used in thermometers, barometers, and as a catalyst in some chemical reactions.</p>
+    </div>
+  </div>
+
+  <!-- Popup for Thallium -->
+<div class="popup" id="popup-Tl">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Tl">&times;</span>
+      <h2>Thallium</h2>
+      <p><strong>Atomic Number:</strong> 81</p>
+      <p><strong>Category:</strong> Post-transition Metal</p>
+      <p><strong>Symbol:</strong> Tl</p>
+      <p><strong>Atomic Weight:</strong> 204.38 u</p>
+      <p><strong>Density:</strong> 11.85 g/cm³</p>
+      <p><strong>Melting Point:</strong> 304°C</p>
+      <p><strong>Boiling Point:</strong> 1473°C</p>
+      <p><strong>Description:</strong> Thallium is used in electronics, in photoelectric cells, and as a poison in rodenticides.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Lead -->
+  <div class="popup" id="popup-Pb">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pb">&times;</span>
+      <h2>Lead</h2>
+      <p><strong>Atomic Number:</strong> 82</p>
+      <p><strong>Category:</strong> Post-transition Metal</p>
+      <p><strong>Symbol:</strong> Pb</p>
+      <p><strong>Atomic Weight:</strong> 207.2 u</p>
+      <p><strong>Density:</strong> 11.34 g/cm³</p>
+      <p><strong>Melting Point:</strong> 327.5°C</p>
+      <p><strong>Boiling Point:</strong> 1749°C</p>
+      <p><strong>Description:</strong> Lead is used in batteries, shielding from radiation, and in soldering. It is highly toxic and is being phased out of many applications.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Bismuth -->
+  <div class="popup" id="popup-Bi">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Bi">&times;</span>
+      <h2>Bismuth</h2>
+      <p><strong>Atomic Number:</strong> 83</p>
+      <p><strong>Category:</strong> Post-transition Metal</p>
+      <p><strong>Symbol:</strong> Bi</p>
+      <p><strong>Atomic Weight:</strong> 208.98 u</p>
+      <p><strong>Density:</strong> 9.78 g/cm³</p>
+      <p><strong>Melting Point:</strong> 271.4°C</p>
+      <p><strong>Boiling Point:</strong> 1560°C</p>
+      <p><strong>Description:</strong> Bismuth is used in cosmetics, pharmaceuticals, and as a replacement for lead in certain alloys. It is non-toxic and has a low melting point.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Polonium -->
+  <div class="popup" id="popup-Po">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Po">&times;</span>
+      <h2>Polonium</h2>
+      <p><strong>Atomic Number:</strong> 84</p>
+      <p><strong>Category:</strong> Metalloid</p>
+      <p><strong>Symbol:</strong> Po</p>
+      <p><strong>Atomic Weight:</strong> 209 u</p>
+      <p><strong>Density:</strong> 9.32 g/cm³</p>
+      <p><strong>Melting Point:</strong> 254°C</p>
+      <p><strong>Boiling Point:</strong> 962°C</p>
+      <p><strong>Description:</strong> Polonium is a highly radioactive element used as a neutron source in nuclear reactors and in the study of radiation effects.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Astatine -->
+  <div class="popup" id="popup-At">
+    <div class="popup-content">
+      <span class="close-btn" id="close-At">&times;</span>
+      <h2>Astatine</h2>
+      <p><strong>Atomic Number:</strong> 85</p>
+      <p><strong>Category:</strong> Halogen</p>
+      <p><strong>Symbol:</strong> At</p>
+      <p><strong>Atomic Weight:</strong> 210 u</p>
+      <p><strong>Density:</strong> 6.1 g/cm³</p>
+      <p><strong>Melting Point:</strong> 302°C</p>
+      <p><strong>Boiling Point:</strong> 337°C</p>
+      <p><strong>Description:</strong> Astatine is one of the rarest elements and is highly radioactive. It is used in research but has limited practical applications due to its instability.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Radon -->
+  <div class="popup" id="popup-Rn">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Rn">&times;</span>
+      <h2>Radon</h2>
+      <p><strong>Atomic Number:</strong> 86</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> Rn</p>
+      <p><strong>Atomic Weight:</strong> 222 u</p>
+      <p><strong>Density:</strong> 9.73 g/L</p>
+      <p><strong>Melting Point:</strong> -71°C</p>
+      <p><strong>Boiling Point:</strong> -61.8°C</p>
+      <p><strong>Description:</strong> Radon is a radioactive noble gas that is produced naturally from the decay of uranium and thorium. It is a health hazard when accumulated in enclosed spaces.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Francium -->
+  <div class="popup" id="popup-Fr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Fr">&times;</span>
+      <h2>Francium</h2>
+      <p><strong>Atomic Number:</strong> 87</p>
+      <p><strong>Category:</strong> Alkali Metal</p>
+      <p><strong>Symbol:</strong> Fr</p>
+      <p><strong>Atomic Weight:</strong> 223 u</p>
+      <p><strong>Density:</strong> 1.87 g/cm³</p>
+      <p><strong>Melting Point:</strong> 27°C</p>
+      <p><strong>Boiling Point:</strong> 677°C</p>
+      <p><strong>Description:</strong> Francium is an extremely rare, highly radioactive alkali metal. It is primarily used for scientific research.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Radium -->
+  <div class="popup" id="popup-Ra">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ra">&times;</span>
+      <h2>Radium</h2>
+      <p><strong>Atomic Number:</strong> 88</p>
+      <p><strong>Category:</strong> Alkaline Earth Metal</p>
+      <p><strong>Symbol:</strong> Ra</p>
+      <p><strong>Atomic Weight:</strong> 226 u</p>
+      <p><strong>Density:</strong> 5.5 g/cm³</p>
+      <p><strong>Melting Point:</strong> 700°C</p>
+      <p><strong>Boiling Point:</strong> 1413°C</p>
+      <p><strong>Description:</strong> Radium is a radioactive element once used in luminous paints, but it is now highly regulated due to its dangerous radioactive properties.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Actinium -->
+  <div class="popup" id="popup-Ac">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ac">&times;</span>
+      <h2>Actinium</h2>
+      <p><strong>Atomic Number:</strong> 89</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Ac</p>
+      <p><strong>Atomic Weight:</strong> 227 u</p>
+      <p><strong>Density:</strong> 10.07 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1050°C</p>
+      <p><strong>Boiling Point:</strong> 3200°C</p>
+      <p><strong>Description:</strong> Actinium is used in neutron radiography and radiation therapy, as it is a potent alpha emitter.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Thorium -->
+  <div class="popup" id="popup-Th">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Th">&times;</span>
+      <h2>Thorium</h2>
+      <p><strong>Atomic Number:</strong> 90</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Th</p>
+      <p><strong>Atomic Weight:</strong> 232.04 u</p>
+      <p><strong>Density:</strong> 11.72 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1750°C</p>
+      <p><strong>Boiling Point:</strong> 4790°C</p>
+      <p><strong>Description:</strong> Thorium is used in nuclear reactors and has potential as a safer alternative to uranium for nuclear power generation.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Protactinium -->
+  <div class="popup" id="popup-Pa">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pa">&times;</span>
+      <h2>Protactinium</h2>
+      <p><strong>Atomic Number:</strong> 91</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Pa</p>
+      <p><strong>Atomic Weight:</strong> 231.04 u</p>
+      <p><strong>Density:</strong> 15.37 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1572°C</p>
+      <p><strong>Boiling Point:</strong> 4130°C</p>
+      <p><strong>Description:</strong> Protactinium is highly radioactive and is mainly used in scientific research.</p>
+    </div>
+  </div>
+
+  <!-- Popup for Uranium -->
+<div class="popup" id="popup-U">
+    <div class="popup-content">
+      <span class="close-btn" id="close-U">&times;</span>
+      <h2>Uranium</h2>
+      <p><strong>Atomic Number:</strong> 92</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> U</p>
+      <p><strong>Atomic Weight:</strong> 238.0289 u</p>
+      <p><strong>Density:</strong> 18.95 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1132°C</p>
+      <p><strong>Boiling Point:</strong> 4131°C</p>
+      <p><strong>Description:</strong> Uranium is used as a fuel in nuclear reactors and for nuclear weapons. It is highly radioactive and toxic.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Neptunium -->
+  <div class="popup" id="popup-Np">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Np">&times;</span>
+      <h2>Neptunium</h2>
+      <p><strong>Atomic Number:</strong> 93</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Np</p>
+      <p><strong>Atomic Weight:</strong> 237 u</p>
+      <p><strong>Density:</strong> 20.45 g/cm³</p>
+      <p><strong>Melting Point:</strong> 644°C</p>
+      <p><strong>Boiling Point:</strong> 4131°C</p>
+      <p><strong>Description:</strong> Neptunium is a radioactive element used in scientific research and has applications in nuclear reactors and weapons.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Plutonium -->
+  <div class="popup" id="popup-Pu">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Pu">&times;</span>
+      <h2>Plutonium</h2>
+      <p><strong>Atomic Number:</strong> 94</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Pu</p>
+      <p><strong>Atomic Weight:</strong> 244 u</p>
+      <p><strong>Density:</strong> 19.86 g/cm³</p>
+      <p><strong>Melting Point:</strong> 639°C</p>
+      <p><strong>Boiling Point:</strong> 3230°C</p>
+      <p><strong>Description:</strong> Plutonium is used in nuclear reactors and in the development of nuclear weapons. It is highly radioactive and toxic.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Americium -->
+  <div class="popup" id="popup-Am">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Am">&times;</span>
+      <h2>Americium</h2>
+      <p><strong>Atomic Number:</strong> 95</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Am</p>
+      <p><strong>Atomic Weight:</strong> 243 u</p>
+      <p><strong>Density:</strong> 13.67 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1176°C</p>
+      <p><strong>Boiling Point:</strong> 2880°C</p>
+      <p><strong>Description:</strong> Americium is used in smoke detectors and as a radiation source for various applications in research and industry.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Curium -->
+  <div class="popup" id="popup-Cm">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cm">&times;</span>
+      <h2>Curium</h2>
+      <p><strong>Atomic Number:</strong> 96</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Cm</p>
+      <p><strong>Atomic Weight:</strong> 247 u</p>
+      <p><strong>Density:</strong> 13.51 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1340°C</p>
+      <p><strong>Boiling Point:</strong> 3120°C</p>
+      <p><strong>Description:</strong> Curium is used in scientific research, primarily in the production of alpha particles for medical applications and radiation therapy.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Berkelium -->
+  <div class="popup" id="popup-Bk">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Bk">&times;</span>
+      <h2>Berkelium</h2>
+      <p><strong>Atomic Number:</strong> 97</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Bk</p>
+      <p><strong>Atomic Weight:</strong> 247 u</p>
+      <p><strong>Density:</strong> 14.78 g/cm³</p>
+      <p><strong>Melting Point:</strong> 986°C</p>
+      <p><strong>Boiling Point:</strong> 2500°C</p>
+      <p><strong>Description:</strong> Berkelium is used in scientific research and has no significant commercial applications due to its high radioactivity.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Californium -->
+  <div class="popup" id="popup-Cf">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cf">&times;</span>
+      <h2>Californium</h2>
+      <p><strong>Atomic Number:</strong> 98</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Cf</p>
+      <p><strong>Atomic Weight:</strong> 251 u</p>
+      <p><strong>Density:</strong> 15.10 g/cm³</p>
+      <p><strong>Melting Point:</strong> 900°C</p>
+      <p><strong>Boiling Point:</strong> 1470°C</p>
+      <p><strong>Description:</strong> Californium is used in neutron radiography and in the treatment of certain cancers. It is highly radioactive and has limited practical use.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Einsteinium -->
+  <div class="popup" id="popup-Es">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Es">&times;</span>
+      <h2>Einsteinium</h2>
+      <p><strong>Atomic Number:</strong> 99</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Es</p>
+      <p><strong>Atomic Weight:</strong> 252 u</p>
+      <p><strong>Density:</strong> 8.8 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1133°C</p>
+      <p><strong>Boiling Point:</strong> 2000°C</p>
+      <p><strong>Description:</strong> Einsteinium is used primarily for scientific research, especially in the study of actinides and their properties.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Fermium -->
+  <div class="popup" id="popup-Fm">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Fm">&times;</span>
+      <h2>Fermium</h2>
+      <p><strong>Atomic Number:</strong> 100</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Fm</p>
+      <p><strong>Atomic Weight:</strong> 257 u</p>
+      <p><strong>Density:</strong> 9.7 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1527°C</p>
+      <p><strong>Boiling Point:</strong> 2200°C</p>
+      <p><strong>Description:</strong> Fermium is a synthetic element used in scientific research. It has no significant commercial uses due to its high radioactivity.</p>
+    </div>
+  </div>
+
+  <!-- Popup for Mendelevium -->
+<div class="popup" id="popup-Md">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Md">&times;</span>
+      <h2>Mendelevium</h2>
+      <p><strong>Atomic Number:</strong> 101</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Md</p>
+      <p><strong>Atomic Weight:</strong> 258 u</p>
+      <p><strong>Density:</strong> 10.28 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1100°C</p>
+      <p><strong>Boiling Point:</strong> 2200°C</p>
+      <p><strong>Description:</strong> Mendelevium is a synthetic element used mainly for scientific research due to its high radioactivity and instability.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Nobelium -->
+  <div class="popup" id="popup-No">
+    <div class="popup-content">
+      <span class="close-btn" id="close-No">&times;</span>
+      <h2>Nobelium</h2>
+      <p><strong>Atomic Number:</strong> 102</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> No</p>
+      <p><strong>Atomic Weight:</strong> 259 u</p>
+      <p><strong>Density:</strong> 9.9 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1100°C</p>
+      <p><strong>Boiling Point:</strong> 2200°C</p>
+      <p><strong>Description:</strong> Nobelium is a synthetic element used in nuclear research and has no significant commercial applications due to its instability.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Lawrencium -->
+  <div class="popup" id="popup-Lr">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Lr">&times;</span>
+      <h2>Lawrencium</h2>
+      <p><strong>Atomic Number:</strong> 103</p>
+      <p><strong>Category:</strong> Actinide</p>
+      <p><strong>Symbol:</strong> Lr</p>
+      <p><strong>Atomic Weight:</strong> 262 u</p>
+      <p><strong>Density:</strong> 14.3 g/cm³</p>
+      <p><strong>Melting Point:</strong> 1627°C</p>
+      <p><strong>Boiling Point:</strong> 3327°C</p>
+      <p><strong>Description:</strong> Lawrencium is a synthetic element named after Ernest O. Lawrence. It is used for research purposes and is highly radioactive.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Rutherfordium -->
+  <div class="popup" id="popup-Rf">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Rf">&times;</span>
+      <h2>Rutherfordium</h2>
+      <p><strong>Atomic Number:</strong> 104</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Rf</p>
+      <p><strong>Atomic Weight:</strong> 267 u</p>
+      <p><strong>Density:</strong> 23.4 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2400°C</p>
+      <p><strong>Boiling Point:</strong> 5100°C</p>
+      <p><strong>Description:</strong> Rutherfordium is a synthetic element used in scientific research and has no significant commercial uses due to its extreme radioactivity.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Dubnium -->
+  <div class="popup" id="popup-Db">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Db">&times;</span>
+      <h2>Dubnium</h2>
+      <p><strong>Atomic Number:</strong> 105</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Db</p>
+      <p><strong>Atomic Weight:</strong> 270 u</p>
+      <p><strong>Density:</strong> 29.3 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3000°C</p>
+      <p><strong>Boiling Point:</strong> 5500°C</p>
+      <p><strong>Description:</strong> Dubnium is a synthetic element with very limited applications, primarily used for research due to its high radioactivity.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Seaborgium -->
+  <div class="popup" id="popup-Sg">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Sg">&times;</span>
+      <h2>Seaborgium</h2>
+      <p><strong>Atomic Number:</strong> 106</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Sg</p>
+      <p><strong>Atomic Weight:</strong> 271 u</p>
+      <p><strong>Density:</strong> 35.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2500°C</p>
+      <p><strong>Boiling Point:</strong> 5500°C</p>
+      <p><strong>Description:</strong> Seaborgium is a synthetic element that is studied in particle accelerators. It has no practical uses due to its instability.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Bohrium -->
+  <div class="popup" id="popup-Bh">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Bh">&times;</span>
+      <h2>Bohrium</h2>
+      <p><strong>Atomic Number:</strong> 107</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Bh</p>
+      <p><strong>Atomic Weight:</strong> 270 u</p>
+      <p><strong>Density:</strong> 37.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3000°C</p>
+      <p><strong>Boiling Point:</strong> 6000°C</p>
+      <p><strong>Description:</strong> Bohrium is a synthetic element used for research purposes. It has no commercial applications due to its high radioactivity and instability.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Hassium -->
+  <div class="popup" id="popup-Hs">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Hs">&times;</span>
+      <h2>Hassium</h2>
+      <p><strong>Atomic Number:</strong> 108</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Hs</p>
+      <p><strong>Atomic Weight:</strong> 277 u</p>
+      <p><strong>Density:</strong> 41.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2800°C</p>
+      <p><strong>Boiling Point:</strong> 6000°C</p>
+      <p><strong>Description:</strong> Hassium is a synthetic element created in particle accelerators. It has no practical uses due to its extreme instability and radioactivity.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Meitnerium -->
+  <div class="popup" id="popup-Mt">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Mt">&times;</span>
+      <h2>Meitnerium</h2>
+      <p><strong>Atomic Number:</strong> 109</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Mt</p>
+      <p><strong>Atomic Weight:</strong> 278 u</p>
+      <p><strong>Density:</strong> 37.4 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2700°C</p>
+      <p><strong>Boiling Point:</strong> 5700°C</p>
+      <p><strong>Description:</strong> Meitnerium is a synthetic element that is highly radioactive and has no significant commercial uses.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Darmstadtium -->
+  <div class="popup" id="popup-Ds">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ds">&times;</span>
+      <h2>Darmstadtium</h2>
+      <p><strong>Atomic Number:</strong> 110</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Ds</p>
+      <p><strong>Atomic Weight:</strong> 281 u</p>
+      <p><strong>Density:</strong> 38.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2800°C</p>
+      <p><strong>Boiling Point:</strong> 6000°C</p>
+      <p><strong>Description:</strong> Darmstadtium is a synthetic element with no practical uses, created for scientific study of nuclear reactions and atomic properties.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Roentgenium -->
+  <div class="popup" id="popup-Rg">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Rg">&times;</span>
+      <h2>Roentgenium</h2>
+      <p><strong>Atomic Number:</strong> 111</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Rg</p>
+      <p><strong>Atomic Weight:</strong> 280 u</p>
+      <p><strong>Density:</strong> 41.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 2800°C</p>
+      <p><strong>Boiling Point:</strong> 5900°C</p>
+      <p><strong>Description:</strong> Roentgenium is a synthetic element with no significant applications, used primarily for research in nuclear chemistry.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Copernicium -->
+  <div class="popup" id="popup-Cn">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Cn">&times;</span>
+      <h2>Copernicium</h2>
+      <p><strong>Atomic Number:</strong> 112</p>
+      <p><strong>Category:</strong> Transition Metal</p>
+      <p><strong>Symbol:</strong> Cn</p>
+      <p><strong>Atomic Weight:</strong> 285 u</p>
+      <p><strong>Density:</strong> 37.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3400°C</p>
+      <p><strong>Boiling Point:</strong> 5900°C</p>
+      <p><strong>Description:</strong> Copernicium is a synthetic element with limited research applications. It is highly radioactive and unstable.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Nihonium -->
+  <div class="popup" id="popup-Nh">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Nh">&times;</span>
+      <h2>Nihonium</h2>
+      <p><strong>Atomic Number:</strong> 113</p>
+      <p><strong>Category:</strong> Post-Transition Metal</p>
+      <p><strong>Symbol:</strong> Nh</p>
+      <p><strong>Atomic Weight:</strong> 284 u</p>
+      <p><strong>Density:</strong> 16.6 g/cm³</p>
+      <p><strong>Melting Point:</strong> 3300°C</p>
+      <p><strong>Boiling Point:</strong> 5800°C</p>
+      <p><strong>Description:</strong> Nihonium is a synthetic element with limited research use, named after Japan. It is highly unstable and radioactive.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Flerovium -->
+  <div class="popup" id="popup-Fl">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Fl">&times;</span>
+      <h2>Flerovium</h2>
+      <p><strong>Atomic Number:</strong> 114</p>
+      <p><strong>Category:</strong> Post-Transition Metal</p>
+      <p><strong>Symbol:</strong> Fl</p>
+      <p><strong>Atomic Weight:</strong> 289 u</p>
+      <p><strong>Density:</strong> 18.2 g/cm³</p>
+      <p><strong>Melting Point:</strong> 500°C</p>
+      <p><strong>Boiling Point:</strong> 6000°C</p>
+      <p><strong>Description:</strong> Flerovium is a synthetic element, highly radioactive and unstable, created for research purposes only.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Moscovium -->
+  <div class="popup" id="popup-Mc">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Mc">&times;</span>
+      <h2>Moscovium</h2>
+      <p><strong>Atomic Number:</strong> 115</p>
+      <p><strong>Category:</strong> Post-Transition Metal</p>
+      <p><strong>Symbol:</strong> Mc</p>
+      <p><strong>Atomic Weight:</strong> 288 u</p>
+      <p><strong>Density:</strong> 14.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 300°C</p>
+      <p><strong>Boiling Point:</strong> 4000°C</p>
+      <p><strong>Description:</strong> Moscovium is a synthetic element with limited applications, used primarily for scientific study in particle accelerators.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Livermorium -->
+  <div class="popup" id="popup-Lv">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Lv">&times;</span>
+      <h2>Livermorium</h2>
+      <p><strong>Atomic Number:</strong> 116</p>
+      <p><strong>Category:</strong> Post-Transition Metal</p>
+      <p><strong>Symbol:</strong> Lv</p>
+      <p><strong>Atomic Weight:</strong> 293 u</p>
+      <p><strong>Density:</strong> 15.6 g/cm³</p>
+      <p><strong>Melting Point:</strong> 450°C</p>
+      <p><strong>Boiling Point:</strong> 6000°C</p>
+      <p><strong>Description:</strong> Livermorium is a synthetic element, unstable and radioactive, created for nuclear research.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Tennessine -->
+  <div class="popup" id="popup-Ts">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Ts">&times;</span>
+      <h2>Tennessine</h2>
+      <p><strong>Atomic Number:</strong> 117</p>
+      <p><strong>Category:</strong> Halogen</p>
+      <p><strong>Symbol:</strong> Ts</p>
+      <p><strong>Atomic Weight:</strong> 294 u</p>
+      <p><strong>Density:</strong> 13.0 g/cm³</p>
+      <p><strong>Melting Point:</strong> 550°C</p>
+      <p><strong>Boiling Point:</strong> 5000°C</p>
+      <p><strong>Description:</strong> Tennessine is a synthetic halogen element that has been produced for research purposes, with no commercial use due to its instability.</p>
+    </div>
+  </div>
+  
+  <!-- Popup for Oganesson -->
+  <div class="popup" id="popup-Og">
+    <div class="popup-content">
+      <span class="close-btn" id="close-Og">&times;</span>
+      <h2>Oganesson</h2>
+      <p><strong>Atomic Number:</strong> 118</p>
+      <p><strong>Category:</strong> Noble Gas</p>
+      <p><strong>Symbol:</strong> Og</p>
+      <p><strong>Atomic Weight:</strong> 294 u</p>
+      <p><strong>Density:</strong> 5.1 g/cm³</p>
+      <p><strong>Melting Point:</strong> -20°C</p>
+      <p><strong>Boiling Point:</strong> -170°C</p>
+      <p><strong>Description:</strong> Oganesson is a synthetic element and one of the heaviest known, with potential applications in scientific research due to its extreme instability.</p>
+    </div>
+  </div>
+    </main>
+  <script src="popup.js"></script>
+   </body>
+</html>  
+  
